@@ -59,9 +59,17 @@
 
             <nav id="flex-item-2" class="menu">
                 <ul>
-                    <li><a href="#about-me" class="menu-option">About</a></li>
-                    <li><a href="#projects" class="menu-option">Projects</a></li>
-                    <li><a href="#get-in-contact" class="menu-option">Get in Contact</a></li>
+                    <li>
+                        <a href="#about-me" class="menu-option">
+                            About
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#projects" class="menu-option">Projects</a>
+                    </li>
+                    <li>
+                        <a href="#get-in-contact" class="menu-option">Get in Contact</a>
+                    </li>
                 </ul>
                 <div class="icons">
                     <a href="https://www.linkedin.com/in/diana-js/" target=_blank>
@@ -79,8 +87,9 @@
                     </a>
 
                     <!-- NEED TO ADD THE PDF TO THE CODE -->
-                    <a href="a" target=_blank><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"
-                            fill-rule="evenodd" clip-rule="evenodd" class="social-icon">
+                    <a href="a" target=_blank>
+                        <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
+                            clip-rule="evenodd" class="social-icon">
                             <path
                                 d="M3 24h19v-23h-1v22h-18v1zm17-24h-18v22h18v-22zm-3 17h-12v1h12v-1zm0-3h-12v1h12v-1zm0-3h-12v1h12v-1zm-7.348-3.863l.948.3c-.145.529-.387.922-.725 1.178-.338.257-.767.385-1.287.385-.643 0-1.171-.22-1.585-.659-.414-.439-.621-1.04-.621-1.802 0-.806.208-1.432.624-1.878.416-.446.963-.669 1.642-.669.592 0 1.073.175 1.443.525.221.207.386.505.496.892l-.968.231c-.057-.251-.177-.449-.358-.594-.182-.146-.403-.218-.663-.218-.359 0-.65.129-.874.386-.223.258-.335.675-.335 1.252 0 .613.11 1.049.331 1.308.22.26.506.39.858.39.26 0 .484-.082.671-.248.187-.165.322-.425.403-.779zm3.023 1.78l-1.731-4.842h1.06l1.226 3.584 1.186-3.584h1.037l-1.734 4.842h-1.044z" />
                         </svg>
@@ -93,17 +102,19 @@
         <main>
             <div id="about-me" class="content">
                 <h2>About me</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam delectus necessitatibus eaque beatae
-                    suscipit mollitia excepturi cumque optio ea reprehenderit saepe quos esse maxime, dolorem dolorum
-                    reiciendis dicta facilis enim!</p>
-                <p>Pellentesque finibus sed mi pharetra vestibulum. Phasellus maximus dignissim dolor, vel mattis sapien
-                    lobortis id. Ut luctus congue libero non euismod. Nulla ut scelerisque elit. Praesent ut mi
-                    vehicula, congue purus molestie, tempor massa. Aenean dictum mauris eu felis iaculis, ac lacinia
-                    nisi commodo. Integer dui arcu, eleifend vel nunc tempor, rhoncus egestas urna. Praesent scelerisque
-                    urna leo, eu faucibus odio faucibus a. Proin dolor justo, placerat in ipsum at, consectetur euismod
-                    diam. Curabitur ac justo aliquet, tempus urna sit amet, rhoncus urna. Donec congue in metus
-                    tincidunt bibendum. Vivamus eget tellus lobortis, interdum risus in, aliquet purus. Sed et dignissim
-                    lacus. Etiam cursus urna eget accumsan facilisis.</p>
+                <p>Hi, my name is Diana Silva and I am an aspiring software developer.</p>
+                <p>I stumbled into programming mid last year when I took Harvard’s CS50 course online just for fun. What
+                    started as a little challenge quickly turned into a real interest. The more I dived into the
+                    lectures and projects, the more I wanted to learn. That spark led me to dive into more courses and
+                    eventually sign up for a Computing and IT degree.</p>
+                <p id="smaller-para">These days, I’m juggling university projects with various MOOC’s and courses from
+                    Codecademy,
+                    freeCodeCamp and Code First Girls. I’m all about learning new things and building cool stuff with
+                    code.</p>
+                <dotlottie-player class="lottie-about"
+                    src="https://lottie.host/db511ff4-a4bd-45a5-9272-d4eebcdf9b32/Zp0vp05zD2.json"
+                    background="transparent" speed="1" style="width: 470px; height: 470px;" loop
+                    autoplay></dotlottie-player>
             </div>
 
             <div id="projects" class="content">
@@ -115,10 +126,14 @@
             </div>
 
             <div id="get-in-contact" class="content">
-                <h2> Do get in contact through:</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium natus quisquam aliquid doloribus
-                    repudiandae cum assumenda. Magnam, magni aliquid! Numquam neque labore ullam. Ad neque, fuga
-                    perspiciatis fugit a magnam?</p>
+                <h2> Get in contact</h2>
+                <p id="contact-para">If you have any job opportunities or just want to connect, then feel free to get in
+                    touch using any
+                    of my social media or email.</p>
+                <dotlottie-player class="lottie-contact"
+                    src="https://lottie.host/177d74e5-1051-46d3-9611-1aef8a187682/2iSGwckn3h.json"
+                    background="transparent" speed="1" style="width: 400px; height: 400px;" loop
+                    autoplay></dotlottie-player>
             </div>
 
             <a href="#main-front-page"><svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round"
@@ -129,7 +144,9 @@
                 </svg></a>
         </main>
     </div>
+    <footer class="footer">Copyright 2024 © Diana Silva - All Right Reserved.</footer>
 
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
 </body>
 
 </html>

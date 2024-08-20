@@ -1,11 +1,19 @@
 @font-face {
     font-family: caviar_dreams;
-    src: url("assets/font/caviar_dreams/CaviarDreams.ttf");
+    src: url("assets/FONT/caviar_dreams/CaviarDreams.ttf");
 }
 
-html {
-    scroll-snap-type: y mandatory;
+@font-face {
+    font-family: nexa;
+    src: url("assets/FONT/nexa/Nexa-ExtraLight.ttf");
+}
+
+html,
+body {
+    /* scroll-snap-type: y mandatory; */
     scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
 }
 
 * {
@@ -14,7 +22,7 @@ html {
 }
 
 body {
-    /* background-color: #4C3B4D; */
+    background-color: #4C3B4D;
     color: #C9EDDC;
     background-image: url('assets/vecteezy_free-purple-triangles-vector_94617.svg');
     background-size: cover;
@@ -24,7 +32,6 @@ body {
     display: flex;
     height: 100vh;
     width: 100vw;
-    scroll-snap-align: start;
     justify-content: center;
     align-items: center;
 }
@@ -116,12 +123,12 @@ a:hover {
 }
 
 .menu-option:hover {
-    transform: translateX(30px);
+    transform: translateX(10px);
 }
 
 .social-icon {
     fill: #89B6A5;
-    transition: fill 0.3s;
+    transition: all 0.3s;
 }
 
 .icons {
@@ -131,6 +138,7 @@ a:hover {
 
 .social-icon:hover {
     fill: #C9EDDC;
+    transform: scale(1.1)
 }
 
 ul {
@@ -149,7 +157,7 @@ main {
 
 .content {
     height: 100vh;
-    scroll-snap-align: start;
+    position: relative;
 }
 
 .content p {
@@ -169,10 +177,39 @@ main {
     position: fixed;
     right: 40px;
     bottom: 25px;
-    transition: all 0.2s ease-in-out 0.2s;
+    transition: all 0.2s ease-in-out 0.05s;
 }
 
 .going-top-page:hover {
     fill: #C9EDDC;
-    transform: translateY(-10px);
+    transform: translateY(-5px);
+}
+
+.lottie-about {
+    position: absolute;
+    bottom: -5px;
+    left: 340px;
+}
+
+#smaller-para {
+    width: 360px;
+}
+
+.lottie-contact {
+    position: absolute;
+    right: 90px;
+    bottom: 200px;
+}
+
+/* #contact-para {
+    position: absolute;
+    width: 500px;
+    left: 250px;
+    top: 200px;
+} */
+
+.footer {
+    font-size: small;
+    text-align: center;
+    padding-bottom: 15px;
 }
