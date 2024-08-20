@@ -1,0 +1,178 @@
+@font-face {
+    font-family: caviar_dreams;
+    src: url("assets/font/caviar_dreams/CaviarDreams.ttf");
+}
+
+html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+* {
+    font-family: caviar_dreams;
+    /* border: 1px solid red; */
+}
+
+body {
+    /* background-color: #4C3B4D; */
+    color: #C9EDDC;
+    background-image: url('assets/vecteezy_free-purple-triangles-vector_94617.svg');
+    background-size: cover;
+}
+
+.front-page {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: start;
+    justify-content: center;
+    align-items: center;
+}
+
+.front-page-identity {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    padding-bottom: 300px;
+    padding-right: 60px;
+    width: 50%;
+}
+
+.front-page-identity h1 {
+    font-size: 48px;
+    width: 260px;
+    text-align: right;
+    margin-bottom: 7px;
+}
+
+.front-page-identity h2 {
+    font-size: 20px;
+    margin-top: 10px;
+    line-height: 45px;
+}
+
+.main-vertical-line {
+    height: calc(100vh - 170px);
+    width: 1px;
+    background-color: #82968C;
+}
+
+.front-page-nav {
+    padding-top: 200px;
+    padding-left: 60px;
+    width: 50%;
+}
+
+.flex-container {
+    display: flex;
+    column-gap: 160px;
+    align-items: start;
+}
+
+.left-side {
+    color: #C9EDDC;
+    padding-top: 130px;
+    padding-left: 99px;
+    position: sticky;
+    top: 0;
+}
+
+.vertical-line {
+    height: calc(100vh - 170px);
+    width: 1px;
+    background-color: #82968C;
+    position: absolute;
+    top: 70px;
+    right: -60px;
+}
+
+.identity h1 {
+    font-size: 48px;
+    margin-top: 0;
+    margin-bottom: 16px;
+    width: 260px;
+}
+
+.identity h2 {
+    font-size: 20px;
+    line-height: 45px;
+    margin-bottom: 40px;
+}
+
+a {
+    text-decoration: none;
+    color: #82968C;
+    font-size: 24px;
+}
+
+a:hover {
+    color: #C9EDDC;
+}
+
+/* XXXXX revise */
+.menu-option {
+    display: inline-block;
+    transition: all 0.6s;
+}
+
+.menu-option:hover {
+    transform: translateX(30px);
+}
+
+.social-icon {
+    fill: #89B6A5;
+    transition: fill 0.3s;
+}
+
+.icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon:hover {
+    fill: #C9EDDC;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    line-height: 55px;
+}
+
+main {
+    padding-right: 130px;
+}
+
+#projects h3 {
+    margin-top: 30px;
+}
+
+.content {
+    height: 100vh;
+    scroll-snap-align: start;
+}
+
+.content p {
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+.content h2 {
+    margin: 0;
+    font-size: 32px;
+    padding-top: 130px;
+}
+
+.going-top-page {
+    fill: #89B6A5;
+    width: 45px;
+    position: fixed;
+    right: 40px;
+    bottom: 25px;
+    transition: all 0.2s ease-in-out 0.2s;
+}
+
+.going-top-page:hover {
+    fill: #C9EDDC;
+    transform: translateY(-10px);
+}
