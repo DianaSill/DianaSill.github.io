@@ -109,25 +109,22 @@ body {
     margin-bottom: 40px;
 }
 
+/* XXXXX revise */
 a {
     text-decoration: none;
     color: #82968C;
     font-size: 24px;
-}
-
-a:hover {
-    color: #C9EDDC;
-}
-
-/* XXXXX revise */
-.menu-option {
     display: inline-block;
+}
+
+.menu-option {
     transition: all 0.6s;
 }
 
 .menu-option:hover,
-.contact-social:hover {
+.contact-social a:hover {
     transform: translateX(10px);
+    color: #C9EDDC;
 }
 
 .social-icon {
@@ -212,7 +209,7 @@ main {
     padding-top: 30px;
 }
 
-.contact-social {
+.contact-social a {
     font-size: 18px;
     transition: all 0.6s;
 }
