@@ -10,7 +10,6 @@
 
 html,
 body {
-    /* scroll-snap-type: y mandatory; */
     scroll-behavior: smooth;
     margin: 0;
     padding: 0;
@@ -19,6 +18,10 @@ body {
 * {
     font-family: caviar_dreams;
     /* border: 1px solid red; */
+}
+
+p {
+    font-family: nexa;
 }
 
 body {
@@ -122,7 +125,8 @@ a:hover {
     transition: all 0.6s;
 }
 
-.menu-option:hover {
+.menu-option:hover,
+.contact-social:hover {
     transform: translateX(10px);
 }
 
@@ -162,7 +166,7 @@ main {
 
 .content p {
     margin-top: 30px;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .content h2 {
@@ -187,8 +191,8 @@ main {
 
 .lottie-about {
     position: absolute;
-    bottom: -5px;
-    left: 340px;
+    bottom: 50px;
+    left: 360px;
 }
 
 #smaller-para {
@@ -197,8 +201,20 @@ main {
 
 .lottie-contact {
     position: absolute;
-    right: 90px;
-    bottom: 200px;
+    right: 120px;
+    bottom: 65px;
+}
+
+#contact-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 30px;
+}
+
+.contact-social {
+    font-size: 18px;
+    transition: all 0.6s;
 }
 
 /* #contact-para {
