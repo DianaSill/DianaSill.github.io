@@ -8,6 +8,12 @@
     src: url("assets/FONT/nexa/Nexa-ExtraLight.ttf");
 }
 
+@font-face {
+    font-family: nexa;
+    src: url("assets/FONT/nexa/Nexa-Heavy.ttf");
+    font-weight: bold;
+}
+
 html,
 body {
     scroll-behavior: smooth;
@@ -20,6 +26,11 @@ body {
     /* border: 1px solid red; */
 }
 
+.bold-text {
+    font-family: nexa;
+    font-weight: bold;
+}
+
 p {
     font-family: nexa;
 }
@@ -27,7 +38,7 @@ p {
 body {
     background-color: #4C3B4D;
     color: #C9EDDC;
-    background-image: url('assets/vecteezy_free-purple-triangles-vector_94617.svg');
+    background-image: url('assets/purple-triangles-vector.svg');
     background-size: cover;
 }
 
@@ -194,6 +205,35 @@ main {
 
 #smaller-para {
     width: 360px;
+}
+
+.portfolio-project-case {
+    display: flex;
+}
+
+#portfolio-case-text {
+    width: 450px;
+    margin-top: 0;
+    padding-left: 40px;
+}
+
+.para-and-stack {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-image {
+    border-radius: 20px;
+}
+
+.project-stack {
+    display: flex;
+    padding-left: 40px;
+    gap: 15px;
+}
+
+.logo:hover {
+    transform: scale(1.1)
 }
 
 .lottie-contact {
