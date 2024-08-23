@@ -10,18 +10,21 @@ To bring the site to life, I started by designing the layout and visual elements
 ### The site is organized into several key sections:
 
 **Home Page**: 
-The landing page introduces who I am and my role as an beginner level full-stack developer.   
-It includes easy navigation to different parts of the site and links to my LinkedIn, GitHub, and downloadable resume.
+
+<br>The landing page introduces who I am and my role as an beginner level full-stack developer.   
+It includes easy navigation to different parts of the site and links to my LinkedIn, GitHub, and downloadable resume.</br>
 
 **About Me**: 
-This section provides a deeper insight into my background, how I got into programming, and what drives my passion for development. It's a brief story of my transition into tech and the various resources I've used to build my skills.
+
+<br>This section provides a deeper insight into my background, how I got into programming, and what drives my passion for development. It's a brief story of my transition into tech and the various resources I've used to build my skills.</br>
 
 **Projects**: 
-Here, I have an area dedicated to projects with brief descriptions of each, also showing the tech stack used.   
-This gives a snapshot of my coding abilities and the types of applications I've created.
+
+<br>Here, I have an area dedicated to projects with brief descriptions of each, also showing the tech stack used.   
+This gives a snapshot of my coding abilities and the types of applications I've created.</br>
 
 **Get in Contact**: 
-This section invites visitors to connect with me. Whether it's for job opportunities, collaborations, or just networking, I’ve made it easy to reach out via email or social media.
+<br>This section invites visitors to connect with me. Whether it's for job opportunities, collaborations, or just networking, I’ve made it easy to reach out via email or social media.</br>
 
 
 Throughout the site, I’ve incorporated subtle animations and a consistent color scheme to enhance the user experience. The goal was to create a professional yet personal space that reflects both my technical skills and my personality.
