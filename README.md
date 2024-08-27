@@ -1,6 +1,5 @@
 ## My Portfolio
 <br>
-<br>
 My portfolio website is a showcase of my journey and skills as a beginner full-stack developer. 
 It features a modern, clean design with a focus on simplicity and usability. 
 
