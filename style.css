@@ -209,12 +209,39 @@ main {
 .portfolio-project-case {
     display: flex;
     margin-bottom: 40px;
+    gap: 40px;
+}
+
+/* Reverse layout for reverse project */
+.reverse {
+    flex-direction: row-reverse;
+    /* Reverses the layout direction for the whole container */
+}
+
+.reverse-title {
+    text-align: right;
+}
+
+/* Ensure the text is aligned to the right */
+.reverse #portfolio-case-text {
+    text-align: right;
+}
+
+/* Reverse the tech stack icons order and align them to the right */
+.reverse .project-stack {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-start;
+}
+
+/* Make sure the logo icons are displayed in reverse order */
+.reverse .project-stack .logo {
+    gap: 15px;
 }
 
 #portfolio-case-text {
     width: 450px;
     margin-top: 0;
-    padding-left: 40px;
 }
 
 .para-and-stack {
@@ -229,7 +256,6 @@ main {
 
 .project-stack {
     display: flex;
-    padding-left: 40px;
     gap: 15px;
 }
 
