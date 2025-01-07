@@ -198,7 +198,7 @@ main {
 
 .lottie-about {
     position: absolute;
-    bottom: 50px;
+    bottom: 80px;
     left: 360px;
 }
 
@@ -278,6 +278,8 @@ main {
 
 .contact-social a {
     font-size: 18px;
+    font-family: nexa;
+    font-weight: bold;
     transition: all 0.6s;
 }
 
