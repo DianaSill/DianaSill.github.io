@@ -182,10 +182,6 @@ main {
     padding-top: 130px;
 }
 
-.more-soon {
-    padding-top: 30px;
-}
-
 .going-top-page {
     fill: #89B6A5;
     width: 45px;
@@ -212,6 +208,7 @@ main {
 
 .portfolio-project-case {
     display: flex;
+    margin-bottom: 40px;
 }
 
 #portfolio-case-text {
@@ -227,6 +224,7 @@ main {
 
 .project-image {
     border-radius: 20px;
+    object-fit: cover;
 }
 
 .project-stack {

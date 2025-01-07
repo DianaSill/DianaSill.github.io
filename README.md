@@ -1,30 +1,58 @@
-## My Portfolio
-<br>
-My portfolio website is a showcase of my journey and skills as a beginner full-stack developer. 
-It features a modern, clean design with a focus on simplicity and usability. 
+# My Portfolio
 
-To bring the site to life, I started by designing the layout and visual elements in Figma. This allowed me to create a cohesive and visually appealing design before diving into the code. I then translated the design into a responsive and accessible website using HTML and CSS.
-<br>
-<br>
+## Description
+This is my **portfolio website** built to showcase my journey and skills as a beginner full-stack developer. The site features a clean, modern design with a focus on simplicity, accessibility, and user experience. It highlights my development work, background, and contact information.
 
-### The site is organized into several key sections:
+---
 
-**Home Page**: 
-The landing page introduces who I am and my role as an beginner level full-stack developer.   
-It includes easy navigation to different parts of the site and links to my LinkedIn, GitHub, and downloadable resume.
-<br>
+## Snapshot
+![Portfolio Website Screenshot](assets/portfolioLandingpage.png)
 
-**About Me**: 
-This section provides a deeper insight into my background, how I got into programming, and what drives my passion for development. It's a brief story of my transition into tech and the various resources I've used to build my skills.
-<br>
+---
 
-**Projects**: 
-Here, I have an area dedicated to projects with brief descriptions of each, also showing the tech stack used.   
-This gives a snapshot of my coding abilities and the types of applications I've created.
-<br>
+## Features
 
-**Get in Contact**: 
-This section invites visitors to connect with me. Whether it's for job opportunities, collaborations, or just networking, I’ve made it easy to reach out via email or social media.
+- **Home Page**: A welcoming landing page that introduces who I am, my role as a beginner Software Engineer, and links to my LinkedIn, GitHub, and downloadable resume.
+- **About Me**: A section that provides insight into my background, including how I transitioned into tech and my passion for development.
+- **Projects**: A dedicated area where I showcase my projects with brief descriptions and details about the tech stacks used.
+- **Get in Contact**: A contact section that makes it easy for visitors to connect with me via email or social media for job opportunities, collaborations, or networking.
+- **Subtle Animations**: Animations are incorporated to enhance the overall user experience, ensuring smooth transitions throughout the site.
 
-<br>
-Throughout the site, I’ve incorporated subtle animations and a consistent color scheme to enhance the user experience. The goal was to create a professional yet personal space that reflects both my technical skills and my personality.
+---
+
+## Technologies Used
+
+- **HTML**: For structuring the content and layout of the portfolio.
+- **CSS**: For styling the website, including responsive design and animations.
+- **JavaScript**: For implementing interactive features and functionality.
+- **Figma**: Used for designing the layout and visual elements before implementation.
+- **Flexbox**: For creating a responsive, clean layout across different screen sizes.
+
+---
+
+## How It Works
+
+1. **Home Page**: 
+   - The landing page introduces who I am and provides easy navigation to other sections of the site, including links to my LinkedIn, GitHub, and resume.
+   
+2. **About Me**: 
+   - This section shares my story of how I transitioned into tech, my learning journey, and the tools and resources I’ve used to develop my skills.
+
+3. **Projects**: 
+   - Here, visitors can explore a list of my projects, complete with brief descriptions and the technologies used in each project.
+
+4. **Get in Contact**: 
+   - Visitors can easily reach out to me via email or social media for job opportunities or collaborations.
+
+---
+
+## Future Improvements
+
+- **Project Filters**: 
+  - Add the ability to filter projects by technology or category (e.g., "Front-End", "Back-End", "Full-Stack").
+  
+- **Interactive Resume**: 
+  - Enhance the resume section with an interactive, downloadable version that allows users to view specific details based on categories like education, experience, and skills.
+
+- **Improved Animations**: 
+  - Add more dynamic animations and transitions to improve the user experience and make the site more engaging.
