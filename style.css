@@ -120,7 +120,6 @@ body {
     margin-bottom: 40px;
 }
 
-/* XXXXX revise */
 a {
     text-decoration: none;
     color: #82968C;
@@ -141,6 +140,7 @@ a {
 .social-icon {
     fill: #89B6A5;
     transition: all 0.3s;
+    animation-delay: 0.6s;
 }
 
 .icons {
@@ -150,7 +150,6 @@ a {
 
 .social-icon:hover {
     fill: #C9EDDC;
-    transform: scale(1.1)
 }
 
 ul {
@@ -258,15 +257,31 @@ main {
     transition: all 0.6s;
 }
 
-/* #contact-para {
-    position: absolute;
-    width: 500px;
-    left: 250px;
-    top: 200px;
-} */
-
 .footer {
     font-size: small;
     text-align: center;
     padding-bottom: 15px;
 }
+
+/* Initial state for the vertical line */
+.main-vertical-line {
+    height: calc(100vh - 170px);
+    width: 0px;
+    background-color: #82968C;
+    transition: width 1.5s ease;
+    /* Animate width from 0 to full */
+}
+
+/* Final state of the vertical line after animation (this state happens after the animation completes) */
+.main-vertical-line.visible {
+    width: 1px;
+    /* Set the width to 1px when it becomes visible */
+}
+
+/* When the elements are in view, we apply the animations */
+.show-line {
+    width: 1%;
+    /* Make the vertical line visible */
+}
+
+/* RESPONSIVENESS */
