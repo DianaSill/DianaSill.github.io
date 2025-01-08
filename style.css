@@ -414,4 +414,23 @@ main {
     }
 }
 
-/* RESPONSIVENESS */
+.post-it-note {
+    background-color: #75714a;
+    padding: 15px;
+    font-size: 18px;
+    font-family: nexa;
+    font-weight: bold;
+    color: #C9EDDC;
+    border: 2px dashed #000;
+    /* Adds a dashed border to make it look like a post-it note */
+    width: 95%;
+    margin-bottom: 20px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    top: 10px;
+}
+
+.post-it-note p {
+    margin: 0;
+    text-align: center;
+}
