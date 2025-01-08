@@ -263,25 +263,12 @@ main {
     transform: scale(1.1)
 }
 
-.lottie-contact {
-    position: absolute;
-    right: 120px;
-    bottom: 65px;
-}
-
-#contact-list {
+/*#contact-list {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding-top: 30px;
-}
-
-.contact-social a {
-    font-size: 18px;
-    font-family: nexa;
-    font-weight: bold;
-    transition: all 0.6s;
-}
+}*/
 
 .footer {
     font-size: small;
@@ -308,6 +295,123 @@ main {
 .show-line {
     width: 1%;
     /* Make the vertical line visible */
+}
+
+/* Styling for the contact section */
+#get-in-contact {
+    color: #C9EDDC;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 1200px;
+}
+
+#get-in-contact h2 {
+    font-family: nexa;
+    font-size: 32px;
+    text-align: center;
+}
+
+#contact-para {
+    font-family: nexa;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form layout */
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Flexbox for Name and Email fields */
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    /* Reduced gap between fields */
+}
+
+.form-row .form-field {
+    flex: 1;
+    /* Fields grow equally to occupy space */
+}
+
+.form-row .form-field:not(:last-child) {
+    margin-right: 10px;
+    /* Add slight margin between Name and Email */
+}
+
+/* Individual form fields */
+.form-field {
+    margin-bottom: 15px;
+}
+
+.form-field label {
+    display: block;
+    font-family: nexa;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.form-field input,
+.form-field textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-family: nexa;
+    border: 1px solid #82968C;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #C9EDDC;
+    outline: none;
+    box-sizing: border-box;
+    /* Prevent padding from affecting width */
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+    border-color: #C9EDDC;
+    background-color: transparent;
+}
+
+/* Button styling */
+.submit-button {
+    padding: 12px 20px;
+    font-size: 18px;
+    font-family: nexa;
+    font-weight: bold;
+    background-color: #89B6A5;
+    color: #4C3B4D;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #82968C;
+    transform: translateY(-3px);
+    /* Slightly lift the button */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #get-in-contact {
+        width: 80%;
+        padding: 20px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        /* Stack fields vertically on smaller screens */
+    }
+
+    .form-row .form-field:not(:last-child) {
+        margin-right: 0;
+        /* Remove margin between fields when stacked */
+    }
 }
 
 /* RESPONSIVENESS */

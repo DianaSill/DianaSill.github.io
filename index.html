@@ -179,21 +179,40 @@
 
             <div id="get-in-contact" class="content">
                 <h2> Get in contact</h2>
-                <p id="contact-para">If you have any <span class="bold-text">job opportunities</span> or just want to
+                <p id="contact-para">If you have any job opportunities or just want to
                     connect, then feel free to get in
-                    touch using my linkedin or email 📮.</p>
-                <ul id="contact-list">
-                    <li class="contact-social">
-                        <a href="mailto:dianasilva050@outlook.com">Email</a>
-                    </li>
-                    <li class="contact-social">
-                        <a href="https://www.linkedin.com/in/diana-js/" target=_blank>Linkedin</a>
-                    </li>
-                </ul>
-                <dotlottie-player class="lottie-contact"
-                    src="https://lottie.host/3832e568-46d3-4409-a9b8-286747e1b141/q7itWzKr7P.lottie"
-                    background="transparent" speed="1" style="width: 500px; height: 500px" loop
-                    autoplay></dotlottie-player>
+                    touch using my linkedin or by leaving a message 📮.</p>
+                <!-- Display error or success messages if available -->
+                <?php if (!empty($errorMessage)): ?>
+                <div class="error-message">
+                    <?php echo $errorMessage; ?>
+                </div>
+                <?php endif; ?>
+                <?php if (!empty($successMessage)): ?>
+                <div class="success-message">
+                    <?php echo $successMessage; ?>
+                </div>
+                <?php endif; ?>
+                <form id="contact-form" action="send_email.php" method="POST">
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required />
+                        </div>
+                        <div class="form-field">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required />
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <!-- reCAPTCHA v2 widget -->
+                    <div class="g-recaptcha" data-sitekey="6Lf7fbEqAAAAAOJIheo2ftYm_o3yJhu6bamnVmIZ"></div>
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+
             </div>
 
             <a href="#main-front-page"><svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round"
@@ -204,8 +223,9 @@
                 </svg></a>
         </main>
     </div>
-    <footer class="footer">Copyright 2023-Present © Diana Silva - All Right Reserved.</footer>
+    <footer class="footer">Copyright 2024-Present © Diana Silva - All Right Reserved.</footer>
     <script src="script.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
 </body>
 

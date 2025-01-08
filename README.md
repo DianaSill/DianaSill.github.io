@@ -17,6 +17,7 @@ This is my **portfolio website** built to showcase my journey and skills as a be
 - **Projects**: A dedicated area where I showcase my projects with brief descriptions and details about the tech stacks used.
 - **Get in Contact**: A contact section that makes it easy for visitors to connect with me via email or social media for job opportunities, collaborations, or networking.
 - **Subtle Animations**: Animations are incorporated to enhance the overall user experience, ensuring smooth transitions throughout the site.
+- **PHP Form Handling**: A contact form that uses PHP to handle form submissions, sending messages to my email.
 
 ---
 
@@ -25,8 +26,9 @@ This is my **portfolio website** built to showcase my journey and skills as a be
 - **HTML**: For structuring the content and layout of the portfolio.
 - **CSS**: For styling the website, including responsive design and animations.
 - **JavaScript**: For implementing interactive features and functionality.
-- **Figma**: Used for designing the layout and visual elements before implementation.
+- **PHP**: For handling form submissions and sending messages to my email through the contact form.
 - **Flexbox**: For creating a responsive, clean layout across different screen sizes.
+- **Figma**: Used for designing the layout and visual elements before implementation.
 
 ---
 
@@ -42,7 +44,7 @@ This is my **portfolio website** built to showcase my journey and skills as a be
    - Here, visitors can explore a list of my projects, complete with brief descriptions and the technologies used in each project.
 
 4. **Get in Contact**: 
-   - Visitors can easily reach out to me via email or social media for job opportunities or collaborations.
+   - Visitors can easily reach out to me via email or social media for job opportunities or collaborations. The contact form uses PHP to handle submissions and send messages directly to my email.
 
 ---
 
