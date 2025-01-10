@@ -1,3 +1,4 @@
+/* ============================== Fonts ============================== */
 @font-face {
     font-family: caviar_dreams;
     src: url("assets/FONT/caviar_dreams/CaviarDreams.ttf");
@@ -14,11 +15,15 @@
     font-weight: bold;
 }
 
+/* ============================== General Styles ============================== */
 html,
 body {
     scroll-behavior: smooth;
     margin: 0;
     padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+    /* overflow-x: hidden; breaks the sticky menu */
 }
 
 * {
@@ -26,6 +31,7 @@ body {
     /* border: 1px solid red; */
 }
 
+/* ============================== Text Styles ============================== */
 .bold-text {
     font-family: nexa;
     font-weight: bold;
@@ -42,6 +48,7 @@ body {
     background-size: cover;
 }
 
+/* ============================== Layout Styles ============================== */
 .front-page {
     display: flex;
     height: 100vh;
@@ -54,23 +61,69 @@ body {
     display: flex;
     align-items: flex-end;
     flex-direction: column;
-    padding-bottom: 300px;
-    padding-right: 60px;
+    padding-bottom: 25vh;
+    padding-right: 5vw;
     width: 50%;
 }
 
+@media (max-width: 1024px) {
+    .front-page-identity {
+        padding-bottom: 15vh;
+        padding-right: 5vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .front-page-identity {
+        padding-bottom: 10vh;
+        padding-right: 4vw;
+    }
+}
+
+/* Landing page h1 and h2 layout */
+
 .front-page-identity h1 {
-    font-size: 48px;
-    width: 260px;
+    font-size: 2.5rem;
+    width: 80%;
     text-align: right;
-    margin-bottom: 7px;
+    margin-bottom: 0.8rem;
 }
 
 .front-page-identity h2 {
-    font-size: 20px;
-    margin-top: 10px;
-    line-height: 45px;
+    font-size: 1.2rem;
+    margin-top: 0.8rem;
+    line-height: 2rem;
 }
+
+@media (max-width: 1024px) {
+    .front-page-identity h1 {
+        font-size: 2rem;
+        width: 90%;
+        margin-bottom: 0.6rem;
+    }
+
+    .front-page-identity h2 {
+        font-size: 1rem;
+        margin-top: 0.6rem;
+        line-height: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .front-page-identity h1 {
+        font-size: 1.8rem;
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .front-page-identity h2 {
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+        line-height: 1.5rem;
+    }
+}
+
+/* Landing page vertical line layout */
 
 .main-vertical-line {
     height: calc(100vh - 170px);
@@ -78,24 +131,135 @@ body {
     background-color: #82968C;
 }
 
+@media (max-width: 1024px) {
+    .main-vertical-line {
+        height: calc(100vh - 120px);
+    }
+}
+
+@media (max-width: 768px) {
+    .main-vertical-line {
+        height: calc(100vh - 100px);
+        width: 3px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-vertical-line {
+        height: calc(100vh - 80px);
+        width: 3px;
+
+        position: absolute;
+        /* Absolute for centering */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* Adjusting for perfect centering */
+    }
+}
+
+/* Landing page nav menu on right side */
+
 .front-page-nav {
     padding-top: 200px;
     padding-left: 60px;
     width: 50%;
 }
 
+@media (max-width: 1024px) {
+    .front-page-nav {
+        padding-top: 150px;
+        padding-left: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .front-page-nav {
+        padding-top: 100px;
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .front-page-nav {
+        padding-top: 50px;
+        padding-left: 4vw;
+    }
+}
+
+
+/* Flex box of left and right MAIN CONTENT */
+
 .flex-container {
     display: flex;
     column-gap: 160px;
     align-items: start;
+    max-width: 1920px;
+    margin: 0 auto;
 }
 
 .left-side {
-    color: #C9EDDC;
+    color: #c9eddc;
     padding-top: 130px;
     padding-left: 99px;
     position: sticky;
     top: 0;
+    display: block;
+}
+
+.nav-dropdown {
+    position: relative;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+}
+
+.dropdown-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #c9eddc;
+    position: absolute;
+    left: 10px;
+    width: 300px;
+    display: none;
+    border-radius: 5px;
+}
+
+/* Button styling */
+.menu-toggle-button {
+    display: none;
+    background-color: transparent;
+    color: #fff;
+    font-size: 40px;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+}
+
+/* For tablet and mobile screens */
+@media (max-width: 1024px) {
+
+    /* Hide the left-side menu by default on smaller screens */
+    .left-side {
+        display: none;
+    }
+
+    /* Show the menu toggle button only on smaller screens */
+    .menu-toggle-button {
+        display: block;
+    }
+
+    .content {
+        display: none;
+    }
+}
+
+/* Active state styles to the button */
+.menu-toggle-button.active {
+    background-color: #555;
 }
 
 .vertical-line {
@@ -107,6 +271,7 @@ body {
     right: -60px;
 }
 
+/* ============================== Identity Section ============================== */
 .identity h1 {
     font-size: 48px;
     margin-top: 0;
@@ -120,11 +285,45 @@ body {
     margin-bottom: 40px;
 }
 
+/* ============================== Links & Menu Styles ============================== */
 a {
     text-decoration: none;
     color: #82968C;
-    font-size: 24px;
+    font-size: 1.5rem;
+    /* Default font size */
     display: inline-block;
+}
+
+@media (max-width: 1024px) {
+    a {
+        font-size: 1.4rem;
+        /* Slightly smaller font size for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    a {
+        font-size: 1.2rem;
+        /* Smaller font size for mobile */
+    }
+
+    .menu-toggle-button {
+        display: block;
+        /* Show the button on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    a {
+        font-size: 1rem;
+        /* Even smaller font size for very small screens */
+    }
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    line-height: 55px;
 }
 
 .menu-option {
@@ -152,23 +351,86 @@ a {
     fill: #C9EDDC;
 }
 
-ul {
-    list-style-type: none;
-    padding-left: 0;
-    line-height: 55px;
-}
-
+/* ============================== Content Section ============================== */
 main {
     padding-right: 130px;
+    max-width: 1920px;
 }
 
-#projects h3 {
-    margin-top: 30px;
+@media (max-width: 1024px) {
+    main {
+        padding-left: 100px;
+        padding-right: 100px;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .content p {
+        font-size: 14px;
+    }
+
+    .content h2 {
+        font-size: 28px;
+        padding-top: 100px;
+    }
+
+    #projects h3 {
+        font-size: 24px;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        padding-left: 70px;
+        padding-right: 70px;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .content p {
+        font-size: 14px;
+    }
+
+    .content h2 {
+        font-size: 24px;
+        padding-top: 80px;
+    }
+
+    #projects h3 {
+        font-size: 20px;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding-left: 50px;
+        padding-right: 40px;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .content p {
+        font-size: 12px;
+    }
+
+    .content h2 {
+        font-size: 20px;
+        padding-top: 60px;
+    }
+
+    #projects h3 {
+        font-size: 18px;
+        margin-top: 10px;
+    }
 }
 
 .content {
-    height: 100vh;
-    position: relative;
+    /*position: relative;*/
+
+    display: block;
+    /* trying to hide and show the content on button */
 }
 
 .content p {
@@ -182,6 +444,11 @@ main {
     padding-top: 130px;
 }
 
+#projects h3 {
+    margin-top: 30px;
+}
+
+/* ============================== Scroll to Top Button ============================== */
 .going-top-page {
     fill: #89B6A5;
     width: 45px;
@@ -196,15 +463,8 @@ main {
     transform: translateY(-5px);
 }
 
-.lottie-about {
-    position: absolute;
-    bottom: 80px;
-    left: 360px;
-}
+/* ============================== Animations and Effects ============================== */
 
-#smaller-para {
-    width: 360px;
-}
 
 .portfolio-project-case {
     display: flex;
@@ -212,36 +472,77 @@ main {
     gap: 40px;
 }
 
+@media (max-width: 1200px) {
+    .portfolio-project-case {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-project-case {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-project-case {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
 /* Reverse layout for reverse project */
-.reverse {
-    flex-direction: row-reverse;
-    /* Reverses the layout direction for the whole container */
-}
+@media (min-width: 480px) {
+    .reverse {
+        flex-direction: row-reverse;
+    }
 
-.reverse-title {
-    text-align: right;
-}
+    .reverse-title {
+        text-align: right;
+    }
 
-/* Ensure the text is aligned to the right */
-.reverse #portfolio-case-text {
-    text-align: right;
-}
+    /* Ensure the text is aligned to the right */
+    .reverse #portfolio-case-text {
+        text-align: right;
+    }
 
-/* Reverse the tech stack icons order and align them to the right */
-.reverse .project-stack {
-    display: flex;
-    gap: 15px;
-    justify-content: flex-start;
-}
+    /* Reverse the tech stack icons order and align them to the right */
+    .reverse .project-stack {
+        display: flex;
+        gap: 15px;
+        justify-content: flex-start;
+    }
 
-/* Make sure the logo icons are displayed in reverse order */
-.reverse .project-stack .logo {
-    gap: 15px;
+    /* Make sure the logo icons are displayed in reverse order */
+    .reverse .project-stack .logo {
+        gap: 15px;
+    }
 }
 
 #portfolio-case-text {
     width: 450px;
     margin-top: 0;
+}
+
+@media (max-width: 1024px) {
+    #portfolio-case-text {
+        width: 100%;
+        /* Reduce the width for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    #portfolio-case-text {
+        width: 100%;
+        /* Further reduce the width for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    #portfolio-case-text {
+        width: 100%;
+        /* Reduce the width further for very small screens */
+    }
 }
 
 .para-and-stack {
@@ -252,6 +553,15 @@ main {
 .project-image {
     border-radius: 20px;
     object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth transition for both transform and shadow */
+}
+
+.project-image:hover {
+    transform: translateY(-10px);
+    /* Moves the image upwards */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    /* Stronger shadow with increased blur and opacity */
 }
 
 .project-stack {
@@ -263,20 +573,14 @@ main {
     transform: scale(1.1)
 }
 
-/*#contact-list {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-top: 30px;
-}*/
-
+/* ============================== Footer ============================== */
 .footer {
     font-size: small;
     text-align: center;
     padding-bottom: 15px;
 }
 
-/* Initial state for the vertical line */
+/* ============================== Vertical Line Animation ============================== */
 .main-vertical-line {
     height: calc(100vh - 170px);
     width: 0px;
@@ -297,7 +601,7 @@ main {
     /* Make the vertical line visible */
 }
 
-/* Styling for the contact section */
+/* ============================== Contact Section ============================== */
 #get-in-contact {
     color: #C9EDDC;
     margin: 20px auto;
@@ -317,7 +621,7 @@ main {
     margin-bottom: 20px;
 }
 
-/* Form layout */
+/* ============================== Form Layout ============================== */
 #contact-form {
     display: flex;
     flex-direction: column;
@@ -396,7 +700,7 @@ main {
     /* Slightly lift the button */
 }
 
-/* Responsive Design */
+/* ============================== Responsive Design ============================== */
 @media (max-width: 768px) {
     #get-in-contact {
         width: 80%;
@@ -414,6 +718,7 @@ main {
     }
 }
 
+/* ============================== Post-It Note Styles ============================== */
 .post-it-note {
     background-color: #75714a;
     padding: 15px;
