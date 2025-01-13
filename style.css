@@ -41,6 +41,17 @@ p {
     font-family: nexa;
 }
 
+#ambassador {
+    font-family: nexa;
+    font-size: 16px;
+    text-decoration: underline;
+    color: #479d73;
+}
+
+#ambassador:hover {
+    font-weight: bold;
+}
+
 body {
     background-color: #4C3B4D;
     color: #C9EDDC;
