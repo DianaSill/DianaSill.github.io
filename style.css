@@ -763,16 +763,28 @@ main {
     #portfolio-case-text {
         width: 100%;
     }
+
+    .project-image {
+        width: 100%;
+    }
 }
 
 @media (max-width: 768px) {
     #portfolio-case-text {
         width: 100%;
     }
+
+    .project-image {
+        width: 100%;
+    }
 }
 
 @media (max-width: 480px) {
     #portfolio-case-text {
+        width: 100%;
+    }
+
+    .project-image {
         width: 100%;
     }
 }
