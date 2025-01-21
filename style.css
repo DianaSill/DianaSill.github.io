@@ -213,6 +213,7 @@ body {
         font-size: 0.9rem;
         margin-top: 0.5rem;
         line-height: 1.5rem;
+        text-align: end;
     }
 }
 
