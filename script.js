@@ -1,109 +1,55 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // vertical line animations ==============================================================================
-    const verticalLines = document.querySelectorAll('.main-vertical-line, .vertical-line');
 
-    verticalLines.forEach(verticalLine => {
+    // Generic IntersectionObserver setup for animate class
+    const observeElements = (elements, threshold = 0.4, className = 'animate') => {
         const observer = new IntersectionObserver(
             ([entry]) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                } else {
-                    entry.target.classList.remove('animate');
-                }
+                entry.target.classList.toggle(className, entry.isIntersecting);
             },
-            { threshold: 0.4 }
+            { threshold }
         );
-        
-        observer.observe(verticalLine);
-    });
+        elements.forEach(element => observer.observe(element));
+    };
 
-    // hamburger ==============================================================================
+    // Vertical lines animation
+    observeElements(document.querySelectorAll('.main-vertical-line, .vertical-line'));
+
+    // About Me section animation
+    observeElements(document.querySelectorAll(
+        ".left-side, .left-side h1, .left-side h2, .left-side li, .left-side .icons, #about-me, #about-me h2, #about-me p"
+    ), 0.7);
+
+    // Project cases animation
+    observeElements(document.querySelectorAll(
+        ".portfolio-project-case, .title-projects-animation, .projectsMAINtitle, .post-it-note, #contact-para, .contact-title, .form-field"
+    ), 0.7);
+
+    // Front page identity and nav animation (restart animation on 50% visibility)
+    const observerRestart = new IntersectionObserver(([entry], observer) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animation-restart');
+            observer.unobserve(entry.target);
+        }
+    }, { threshold: 0.5 });
+
+    observerRestart.observe(document.querySelector('.front-page-identity'));
+    observerRestart.observe(document.querySelector('.front-page-nav'));
+    
+
+    // Hamburger menu toggle ======================================================================================
     const menuToggle = document.getElementById('menu-toggle-button');
     const dropdownMenu = document.getElementById('dropdownMenu');
-
     if (menuToggle && dropdownMenu) {
         menuToggle.addEventListener('click', () => {
             dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
         });
-
         document.addEventListener('click', (event) => {
             if (!menuToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
                 dropdownMenu.style.display = 'none';
             }
         });
     }
-
-    // IntersectionObserver for About Me section ==============================================================================    
-    const animatedElementsABOUT = document.querySelectorAll(".left-side, .left-side h1, .left-side h2, .left-side li, .left-side .icons");
-
-    const observerABOUT = new IntersectionObserver(
-        (entries, observer) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("animate");
-                } else {
-                    entry.target.classList.remove("animate");
-                }
-            });
-        },
-        {
-            threshold: 0.7,
-        }
-    );
-
-    // Observe each animated element
-    animatedElementsABOUT.forEach((element) => {
-        observerABOUT.observe(element);
-    });
-
-
-    // animation fade up for the project cases =======================================================================
-    const animatedElements = document.querySelectorAll(".portfolio-project-case, .title-projects-animation, .projectsMAINtitle");
-
-    const observer1 = new IntersectionObserver(
-        (entries, observer) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("animate");
-                } else {
-                    entry.target.classList.remove("animate");
-                }
-            });
-        },
-        {
-            threshold: 0.7,
-        }
-    );
-
-    // Observe each animated element
-    animatedElements.forEach((element) => {
-        observer1.observe(element);
-    });
-
-
-    // Both the front-page-identity and front-page-nav elements =================================================
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            // Check if the element is in view
-            if (entry.isIntersecting) {
-                // Add the class to trigger the animation again
-                entry.target.classList.add('animation-restart');
-                // Optionally stop observing the element once it's in view
-                observer.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.5 // Trigger the animation when the element is 50% in view
-    });
-
-    // Select the elements to observe
-    const frontPageIdentity = document.querySelector('.front-page-identity');
-    const frontPageNav = document.querySelector('.front-page-nav');
-
-    observer.observe(frontPageIdentity);
-    observer.observe(frontPageNav);
-
+    
 
 });
