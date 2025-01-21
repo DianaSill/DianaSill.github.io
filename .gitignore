@@ -3,3 +3,6 @@
 /vendor/
 
 .env
+
+backup.css
+notes.txt

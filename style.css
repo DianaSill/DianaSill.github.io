@@ -59,7 +59,76 @@ body {
     background-size: cover;
 }
 
-/* ============================== Layout Styles ============================== */
+/* Landing page vertical line layout ================================================== */
+
+.main-vertical-line,
+.vertical-line {
+    height: calc(100vh - 170px);
+    width: 1px;
+    background-color: #82968C;
+}
+
+@media (max-width: 1024px) {
+    .main-vertical-line {
+        height: calc(100vh - 120px);
+    }
+}
+
+@media (max-width: 768px) {
+    .main-vertical-line {
+        height: calc(100vh - 100px);
+        width: 3px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-vertical-line {
+        height: calc(100vh - 80px);
+        width: 3px;
+
+        position: absolute;
+        /* Absolute for centering */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* Adjusting for perfect centering */
+    }
+}
+
+/* ============================== Vertical Line Animation ============================== */
+@keyframes growFromCenter {
+    0% {
+        height: 0;
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+        height: 50%;
+    }
+    100% {
+        height: calc(100vh - 170px);
+        opacity: 1;
+    }
+}
+
+/* Applying the animation */
+.main-vertical-line,
+.vertical-line {
+    width: 1px;
+    background-color: #82968C;
+    opacity: 0;
+    height: 0;
+    transition: transform 0.5s ease, opacity 0.3s ease;
+}
+
+.main-vertical-line.animate,
+.vertical-line {
+    animation: growFromCenter 1.2s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+    opacity: 1; /* Ensures visibility after animation */
+    height: calc(100vh - 170px); /* Fallback to ensure it's still visible */
+}
+
+/* ============================== front page ============================== */
 .front-page {
     display: flex;
     height: 100vh;
@@ -134,42 +203,44 @@ body {
     }
 }
 
-/* Landing page vertical line layout */
-
-.main-vertical-line {
-    height: calc(100vh - 170px);
-    width: 1px;
-    background-color: #82968C;
-}
-
-@media (max-width: 1024px) {
-    .main-vertical-line {
-        height: calc(100vh - 120px);
+/* ============================== Left to Right Fade-In Animation ============================== */
+@keyframes fadeInLeftToRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px); /* Start from the left */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* End at the original position */
     }
 }
 
-@media (max-width: 768px) {
-    .main-vertical-line {
-        height: calc(100vh - 100px);
-        width: 3px;
-    }
+.front-page-identity h1,
+.front-page-identity h2,
+.front-page-identity .icons {
+    animation: fadeInLeftToRight 1s ease-out forwards;
+    opacity: 0;
 }
 
-@media (max-width: 480px) {
-    .main-vertical-line {
-        height: calc(100vh - 80px);
-        width: 3px;
-
-        position: absolute;
-        /* Absolute for centering */
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        /* Adjusting for perfect centering */
-    }
+.front-page-identity h1 {
+    animation-delay: 0.3s;
 }
 
-/* Landing page nav menu on right side */
+.front-page-identity h2 {
+    animation-delay: 0.6s;
+}
+
+.front-page-identity .icons {
+    animation-delay: 0.9s;
+}
+
+.front-page-identity {
+    animation: fadeInLeftToRight 1s ease-out forwards;
+    animation-delay: 0.1s;
+}
+
+
+/* Landing page nav menu on right side  =========================================== */
 
 .front-page-nav {
     padding-top: 200px;
@@ -198,8 +269,99 @@ body {
     }
 }
 
+/* ============================== Right to Left Fade-In Animation for Nav ============================== */
+.front-page-nav li {
+    opacity: 0;
+    transform: translateX(30px);
+    animation: fadeInRightToLeft 1s ease-out forwards;
+}
+
+.front-page-nav li:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.front-page-nav li:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.front-page-nav li:nth-child(3) {
+    animation-delay: 0.9s;
+}
+
+/* ============================== Right to Left Fade-In Keyframes ============================== */
+@keyframes fadeInRightToLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 
 /* Flex box of left and right MAIN CONTENT */
+
+/* =============== Animation for left side of main content page ==================== */
+.left-side {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+  
+.left-side h1, .left-side h2, .left-side li, .left-side .icons {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+  /* Trigger animation when the 'animate' class is added */
+/* .left-side.animate,
+.left-side.animate h1,
+.left-side.animate h2,
+.left-side.animate li,
+.left-side.animate .icons {
+    animation: fadeInLeftToRight 1s ease-out forwards;
+} */
+
+.left-side.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.left-side.animate h1,
+.left-side.animate h2,
+.left-side.animate li,
+.left-side.animate .icons {
+    opacity: 1;
+    transform: translateX(0);
+}
+  
+.left-side h1 {
+    animation-delay: 0.1s;
+}
+  
+.left-side h2 {
+    animation-delay: 0.2s;
+}
+  
+.left-side li:nth-child(1) {
+    animation-delay: 0.3s;
+}
+  
+.left-side li:nth-child(2) {
+    animation-delay: 0.4s;
+}
+  
+.left-side li:nth-child(3) {
+    animation-delay: 0.5s;
+}
+  
+.left-side .icons {
+    animation-delay: 0.6s;
+}
+
+
+/* =================================== */
 
 .flex-container {
     display: flex;
@@ -239,7 +401,7 @@ body {
     font-weight: bold;
 }
 
-li {
+.dropmenu-item {
     padding-left: 10px;
 }
 
@@ -279,9 +441,6 @@ li {
 }
 
 .vertical-line {
-    height: calc(100vh - 170px);
-    width: 1px;
-    background-color: #82968C;
     position: absolute;
     top: 70px;
     right: -60px;
@@ -313,26 +472,22 @@ a {
 @media (max-width: 1024px) {
     a {
         font-size: 1.4rem;
-        /* Slightly smaller font size for tablets */
     }
 }
 
 @media (max-width: 768px) {
     a {
         font-size: 1.2rem;
-        /* Smaller font size for mobile */
     }
 
     .menu-toggle-button {
         display: block;
-        /* Show the button on mobile */
     }
 }
 
 @media (max-width: 480px) {
     a {
         font-size: 1rem;
-        /* Even smaller font size for very small screens */
     }
 }
 
@@ -417,6 +572,10 @@ main {
         font-size: 20px;
         margin-top: 15px;
     }
+
+    .project-stack {
+        flex-direction: row !important;
+    }
 }
 
 @media (max-width: 480px) {
@@ -444,9 +603,7 @@ main {
 
 .content {
     /*position: relative;*/
-
     display: block;
-    /* trying to hide and show the content on button */
 }
 
 .content p {
@@ -481,10 +638,9 @@ main {
 
 /* ============================== Animations and Effects ============================== */
 
-
 .portfolio-project-case {
     display: flex;
-    margin-bottom: 40px;
+    margin-bottom: 80px;
     gap: 40px;
 }
 
@@ -495,8 +651,12 @@ main {
 }
 
 @media (max-width: 768px) {
-    .portfolio-project-case {
+    .portfolio-project-case,
+    .reverse,
+    .reverse-title {
+        flex-direction: column;
         gap: 20px;
+        text-align: left;
     }
 }
 
@@ -517,7 +677,6 @@ main {
         text-align: right;
     }
 
-    /* Ensure the text is aligned to the right */
     .reverse #portfolio-case-text {
         text-align: right;
     }
@@ -529,7 +688,7 @@ main {
         justify-content: flex-start;
     }
 
-    /* Make sure the logo icons are displayed in reverse order */
+    /* logo icons are displayed in reverse order */
     .reverse .project-stack .logo {
         gap: 15px;
     }
@@ -543,21 +702,18 @@ main {
 @media (max-width: 1024px) {
     #portfolio-case-text {
         width: 100%;
-        /* Reduce the width for tablets */
     }
 }
 
 @media (max-width: 768px) {
     #portfolio-case-text {
         width: 100%;
-        /* Further reduce the width for mobile */
     }
 }
 
 @media (max-width: 480px) {
     #portfolio-case-text {
         width: 100%;
-        /* Reduce the width further for very small screens */
     }
 }
 
@@ -570,14 +726,11 @@ main {
     border-radius: 20px;
     object-fit: cover;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* Smooth transition for both transform and shadow */
 }
 
 .project-image:hover {
     transform: translateY(-10px);
-    /* Moves the image upwards */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    /* Stronger shadow with increased blur and opacity */
 }
 
 .project-stack {
@@ -589,32 +742,52 @@ main {
     transform: scale(1.1)
 }
 
-/* ============================== Footer ============================== */
+/* ============================== Animation for project cases ============================== */
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Default state before animation */
+.portfolio-project-case,
+.title-projects-animation,
+.projectsMAINtitle {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease; /* Fallback */
+}
+
+/* Triggered state */
+.portfolio-project-case.animate,
+.title-projects-animation.animate,
+.projectsMAINtitle.animate {
+    opacity: 1;
+    transform: translateY(0); /* Return to the original position */
+}
+
+.portfolio-project-case,
+.title-projects-animation,
+.projectsMAINtitle {
+    --animation-delay: 0.7s;
+    animation-delay: var(--animation-delay, 1.5s);
+}
+
+/* ============================== Animation for about me ============================== */
+
+
+
+/* ============================== Footer ========================================= */
 .footer {
     font-size: small;
     text-align: center;
     padding-bottom: 15px;
-}
-
-/* ============================== Vertical Line Animation ============================== */
-.main-vertical-line {
-    height: calc(100vh - 170px);
-    width: 0px;
-    background-color: #82968C;
-    transition: width 1.5s ease;
-    /* Animate width from 0 to full */
-}
-
-/* Final state of the vertical line after animation (this state happens after the animation completes) */
-.main-vertical-line.visible {
-    width: 1px;
-    /* Set the width to 1px when it becomes visible */
-}
-
-/* When the elements are in view, we apply the animations */
-.show-line {
-    width: 1%;
-    /* Make the vertical line visible */
 }
 
 /* ============================== Contact Section ============================== */
@@ -649,20 +822,16 @@ main {
     display: flex;
     justify-content: space-between;
     gap: 10px;
-    /* Reduced gap between fields */
 }
 
 .form-row .form-field {
     flex: 1;
-    /* Fields grow equally to occupy space */
 }
 
 .form-row .form-field:not(:last-child) {
     margin-right: 10px;
-    /* Add slight margin between Name and Email */
 }
 
-/* Individual form fields */
 .form-field {
     margin-bottom: 15px;
 }
@@ -686,7 +855,6 @@ main {
     color: #C9EDDC;
     outline: none;
     box-sizing: border-box;
-    /* Prevent padding from affecting width */
 }
 
 .form-field input:focus,
@@ -695,7 +863,6 @@ main {
     background-color: transparent;
 }
 
-/* Button styling */
 .submit-button {
     padding: 12px 20px;
     font-size: 18px;
@@ -713,7 +880,6 @@ main {
 .submit-button:hover {
     background-color: #82968C;
     transform: translateY(-3px);
-    /* Slightly lift the button */
 }
 
 /* ============================== Responsive Design ============================== */
@@ -725,12 +891,10 @@ main {
 
     .form-row {
         flex-direction: column;
-        /* Stack fields vertically on smaller screens */
     }
 
     .form-row .form-field:not(:last-child) {
         margin-right: 0;
-        /* Remove margin between fields when stacked */
     }
 }
 
@@ -743,7 +907,6 @@ main {
     font-weight: bold;
     color: #C9EDDC;
     border: 2px dashed #000;
-    /* Adds a dashed border to make it look like a post-it note */
     width: 95%;
     margin-bottom: 20px;
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
