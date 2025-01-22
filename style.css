@@ -53,11 +53,18 @@ p {
     letter-spacing: 0.5px;
     font-size: 16px;
     text-decoration: underline;
-    color: #74a68d;
+    color: #95dbb8;
 }
 
 #ambassador:hover {
     font-weight: bold;
+}
+
+#repo-proj {
+    font-family: nexa;
+    letter-spacing: 0.5px;
+    text-decoration: underline;
+    color: #95dbb8;
 }
 
 body {
@@ -146,8 +153,8 @@ body {
 .main-vertical-line.animate,
 .vertical-line {
     animation: growFromCenter 1.2s cubic-bezier(0.65, 0, 0.35, 1) forwards;
-    opacity: 1; /* Ensures visibility after animation */
-    height: calc(100vh - 170px); /* Fallback to ensure it's still visible */
+    opacity: 1;
+    height: calc(100vh - 170px);
 }
 
 /* ============================== front page ============================== */
@@ -164,7 +171,7 @@ body {
     align-items: flex-end;
     flex-direction: column;
     padding-bottom: 25vh;
-    padding-right: 5vw;
+    padding-right: 70px;
     width: 50%;
 }
 
@@ -242,33 +249,36 @@ body {
 .front-page-identity h1,
 .front-page-identity h2,
 .front-page-identity .icons {
-    animation: fadeInLeftToRight 1s ease-out forwards;
     opacity: 0;
+    /* animation: fadeInLeftToRight 1s ease-out forwards; */
+    transform: translateX(30px);
+    animation: none;
+}
+
+/* Add animation when the 'animate' class is added */
+.front-page-identity.animate h1,
+.front-page-identity.animate h2,
+.front-page-identity.animate .icons{
+    animation: fadeInLeftToRight 1s ease-out forwards;
 }
 
 .front-page-identity h1 {
-    animation-delay: 0.3s;
+    animation-delay: 0.3s !important;
 }
 
 .front-page-identity h2 {
-    animation-delay: 0.6s;
+    animation-delay: 0.7s !important;
 }
 
 .front-page-identity .icons {
-    animation-delay: 0.9s;
+    animation-delay: 0.9s !important;
 }
-
-.front-page-identity {
-    animation: fadeInLeftToRight 1s ease-out forwards;
-    animation-delay: 0.1s;
-}
-
 
 /* Landing page nav menu on right side  =========================================== */
 
 .front-page-nav {
     padding-top: 200px;
-    padding-left: 60px;
+    padding-left: 70px;
     width: 50%;
 }
 
@@ -300,19 +310,22 @@ body {
     animation: fadeInRightToLeft 1s ease-out forwards;
 }
 
+.front-page-nav.animate {
+    animation: fadeInRightToLeft 1s ease-out forwards;
+}
+
 .front-page-nav li:nth-child(1) {
-    animation-delay: 0.3s;
+    animation-delay: 0.3s !important;
 }
 
 .front-page-nav li:nth-child(2) {
-    animation-delay: 0.6s;
+    animation-delay: 0.6s !important;
 }
 
 .front-page-nav li:nth-child(3) {
-    animation-delay: 0.9s;
+    animation-delay: 0.9s !important;
 }
 
-/* ============================== Right to Left Fade-In Keyframes ============================== */
 @keyframes fadeInRightToLeft {
     0% {
         opacity: 0;
@@ -400,25 +413,25 @@ body {
 #about-me.animate p:nth-of-type(1) {
     opacity: 1;
     transform: translateX(0);
-    transition-delay: 0.4s;
+    transition-delay: 0.2s;
 }
 
 #about-me.animate p:nth-of-type(2) {
     opacity: 1;
     transform: translateX(0);
-    transition-delay: 0.4s;
+    transition-delay: 0.3s;
 }
 
 #about-me.animate p:nth-of-type(3) {
     opacity: 1;
     transform: translateX(0);
-    transition-delay: 0.6s;
+    transition-delay: 0.4s;
 }
 
 #about-me.animate p:nth-of-type(4) {
     opacity: 1;
     transform: translateX(0);
-    transition-delay: 0.8s;
+    transition-delay: 0.5s;
 }
 
 
@@ -479,15 +492,12 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* For tablet and mobile screens */
 @media (max-width: 1024px) {
 
-    /* Hide the left-side menu by default on smaller screens */
     .left-side {
         display: none;
     }
 
-    /* Show the menu toggle button only on smaller screens */
     .menu-toggle-button {
         display: block;
     }
@@ -497,7 +507,6 @@ body {
     }
 }
 
-/* Active state styles to the button */
 .menu-toggle-button.active {
     background-color: #555;
 }
@@ -657,7 +666,7 @@ main {
     }
 
     #projects h3 {
-        font-size: 18px;
+        font-size: 16px;
         margin-top: 10px;
     }
 }
@@ -702,6 +711,11 @@ main {
     display: flex;
     margin-bottom: 80px;
     gap: 40px;
+}
+
+.repo-projects {
+    text-align: center;
+    margin-bottom: 50px;
 }
 
 @media (max-width: 1200px) {
@@ -830,30 +844,29 @@ main {
 /* Default state before animation */
 .portfolio-project-case,
 .title-projects-animation,
-.projectsMAINtitle {
+.projectsMAINtitle,
+.repo-projects {
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease; /* Fallback */
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 /* Triggered state */
 .portfolio-project-case.animate,
 .title-projects-animation.animate,
-.projectsMAINtitle.animate {
+.projectsMAINtitle.animate,
+.repo-projects.animate {
     opacity: 1;
     transform: translateY(0); /* Return to the original position */
 }
 
 .portfolio-project-case,
 .title-projects-animation,
-.projectsMAINtitle {
+.projectsMAINtitle,
+.repo-projects {
     --animation-delay: 0.7s;
     animation-delay: var(--animation-delay, 1.5s);
 }
-
-/* ============================== Animation for about me ============================== */
-
-
 
 /* ============================== Footer ========================================= */
 .footer {
