@@ -22,8 +22,7 @@
 }
 
 /* ============================== General Styles ============================== */
-html,
-body {
+html, body {
     scroll-behavior: smooth;
     margin: 0;
     padding: 0;
@@ -33,24 +32,26 @@ body {
 
 * {
     font-family: comfortaa;
-    /* border: 1px solid red; */
+}
+
+body {
+    background-color: #4C3B4D;
+    color: #C9EDDC;
+    background-image: url('assets/purple-triangles-vector.svg');
+    background-size: cover;
 }
 
 /* ============================== Text Styles ============================== */
+.bold-text, p, #ambassador, #repo-proj {
+    font-family: nexa;
+    letter-spacing: 0.5px;
+}
+
 .bold-text {
-    font-family: nexa;
     font-weight: bold;
-    letter-spacing: 0.5px;
 }
 
-p {
-    font-family: nexa;
-    letter-spacing: 0.5px;
-}
-
-#ambassador {
-    font-family: nexa;
-    letter-spacing: 0.5px;
+#ambassador, #repo-proj {
     font-size: 14px;
     text-decoration: underline;
     color: #95dbb8;
@@ -59,34 +60,6 @@ p {
 #ambassador:hover {
     font-weight: bold;
 }
-
-#repo-proj {
-    font-family: nexa;
-    letter-spacing: 0.5px;
-    text-decoration: underline;
-    color: #95dbb8;
-}
-
-body {
-    background-color: #4C3B4D;
-    color: #C9EDDC;
-    background-image: url('assets/purple-triangles-vector.svg');
-    background-size: cover;
-
-    /* animation: swayBackground 8s infinite alternate ease-in-out; */
-}
-
-/* @keyframes swayBackground {
-    0% {
-        background-position: 0 0;
-    }
-    50% {
-        background-position: 10px 20px;
-    }
-    100% {
-        background-position: -10px -20px;
-    }
-} */
 
 /* Landing page vertical line layout ================================================== */
 
@@ -124,25 +97,29 @@ body {
     }
 }
 
-/* ============================== Vertical Line Animation ============================== */
+/* ============================== Animations ============================== */
 @keyframes growFromCenter {
-    0% {
-        height: 0;
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-        height: 50%;
-    }
-    100% {
-        height: calc(100vh - 170px);
-        opacity: 1;
-    }
+    0% { height: 0; opacity: 0; }
+    50% { opacity: 1; height: 50%; }
+    100% { height: calc(100vh - 170px); opacity: 1; }
 }
 
-/* Applying the animation */
-.main-vertical-line,
-.vertical-line {
+@keyframes fadeInLeftToRight {
+    0% { opacity: 0; transform: translateX(-30px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRightToLeft {
+    0% { opacity: 0; transform: translateX(30px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.main-vertical-line, .vertical-line {
     width: 1px;
     background-color: #82968C;
     opacity: 0;
@@ -150,8 +127,7 @@ body {
     transition: transform 0.5s ease, opacity 0.3s ease;
 }
 
-.main-vertical-line.animate,
-.vertical-line {
+.main-vertical-line.animate, .vertical-line {
     animation: growFromCenter 1.2s cubic-bezier(0.65, 0, 0.35, 1) forwards;
     opacity: 1;
     height: calc(100vh - 170px);
@@ -234,45 +210,18 @@ body {
     }
 }
 
-/* ============================== Left to Right Fade-In Animation ============================== */
-@keyframes fadeInLeftToRight {
-    0% {
-        opacity: 0;
-        transform: translateX(-30px); /* Start from the left */
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0); /* End at the original position */
-    }
-}
-
-.front-page-identity h1,
-.front-page-identity h2,
-.front-page-identity .icons {
+.front-page-identity h1, .front-page-identity h2, .front-page-identity .icons {
     opacity: 0;
-    /* animation: fadeInLeftToRight 1s ease-out forwards; */
     transform: translateX(30px);
-    animation: none;
 }
 
-/* Add animation when the 'animate' class is added */
-.front-page-identity.animate h1,
-.front-page-identity.animate h2,
-.front-page-identity.animate .icons{
+.front-page-identity.animate h1, .front-page-identity.animate h2, .front-page-identity.animate .icons {
     animation: fadeInLeftToRight 1s ease-out forwards;
 }
 
-.front-page-identity h1 {
-    animation-delay: 0.3s !important;
-}
-
-.front-page-identity h2 {
-    animation-delay: 0.7s !important;
-}
-
-.front-page-identity .icons {
-    animation-delay: 0.9s !important;
-}
+.front-page-identity h1 { animation-delay: 0.3s !important; }
+.front-page-identity h2 { animation-delay: 0.7s !important; }
+.front-page-identity .icons { animation-delay: 0.9s !important; }
 
 /* Landing page nav menu on right side  =========================================== */
 
@@ -303,7 +252,6 @@ body {
     }
 }
 
-/* ============================== Right to Left Fade-In Animation for Nav ============================== */
 .front-page-nav li {
     opacity: 0;
     transform: translateX(30px);
@@ -314,125 +262,47 @@ body {
     animation: fadeInRightToLeft 1s ease-out forwards;
 }
 
-.front-page-nav li:nth-child(1) {
-    animation-delay: 0.3s !important;
-}
+.front-page-nav li:nth-child(1) { animation-delay: 0.3s !important; }
+.front-page-nav li:nth-child(2) { animation-delay: 0.6s !important; }
+.front-page-nav li:nth-child(3) { animation-delay: 0.9s !important; }
 
-.front-page-nav li:nth-child(2) {
-    animation-delay: 0.6s !important;
-}
-
-.front-page-nav li:nth-child(3) {
-    animation-delay: 0.9s !important;
-}
-
-@keyframes fadeInRightToLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-/* =============== Animation for left side of main content page ==================== */
-.left-side {
+/* ============================== Content Animations ============================== */
+.left-side, #about-me {
     opacity: 0;
     transform: translateX(-50px);
     transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
-.left-side h1, .left-side h2, .left-side li, .left-side .icons {
-    opacity: 0;
-    transform: translateX(-20px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
-}
-
-.left-side.animate {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.left-side.animate h1,
-.left-side.animate h2,
-.left-side.animate li,
-.left-side.animate .icons {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.left-side h1 {
-    transition-delay: 0.2s;
-}
-
-.left-side h2 {
-    transition-delay: 0.4s;
-}
-
-.left-side li:nth-child(1) {
-    transition-delay: 0.5s;
-}
-
-.left-side li:nth-child(2) {
-    transition-delay: 0.6s;
-}
-
-.left-side li:nth-child(3) {
-    transition-delay: 0.7s;
-}
-
-.left-side .icons {
-    transition-delay: 0.9s;
-}
-
-#about-me {
-    opacity: 0;
-    transform: translateX(-50px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
-}
-
+.left-side h1, .left-side h2, .left-side li, .left-side .icons,
 #about-me h2, #about-me p {
     opacity: 0;
     transform: translateX(-20px);
     transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
-#about-me.animate {
+.left-side.animate, #about-me.animate {
     opacity: 1;
     transform: translateX(0);
 }
 
-#about-me.animate h2 {
+.left-side.animate h1, .left-side.animate h2, .left-side.animate li, .left-side.animate .icons,
+#about-me.animate h2, #about-me.animate p {
     opacity: 1;
     transform: translateX(0);
-    transition-delay: 0.1s;
 }
 
-#about-me.animate p:nth-of-type(1) {
-    opacity: 1;
-    transform: translateX(0);
-    transition-delay: 0.2s;
-}
+.left-side h1 { transition-delay: 0.2s; }
+.left-side h2 { transition-delay: 0.4s; }
+.left-side li:nth-child(1) { transition-delay: 0.5s; }
+.left-side li:nth-child(2) { transition-delay: 0.6s; }
+.left-side li:nth-child(3) { transition-delay: 0.7s; }
+.left-side .icons { transition-delay: 0.9s; }
 
-#about-me.animate p:nth-of-type(2) {
-    opacity: 1;
-    transform: translateX(0);
-    transition-delay: 0.3s;
-}
-
-#about-me.animate p:nth-of-type(3) {
-    opacity: 1;
-    transform: translateX(0);
-    transition-delay: 0.4s;
-}
-
-#about-me.animate p:nth-of-type(4) {
-    opacity: 1;
-    transform: translateX(0);
-    transition-delay: 0.5s;
-}
+#about-me.animate h2 { transition-delay: 0.1s; }
+#about-me.animate p:nth-of-type(1) { transition-delay: 0.2s; }
+#about-me.animate p:nth-of-type(2) { transition-delay: 0.3s; }
+#about-me.animate p:nth-of-type(3) { transition-delay: 0.4s; }
+#about-me.animate p:nth-of-type(4) { transition-delay: 0.5s; }
 
 
 
@@ -825,47 +695,20 @@ main {
 }
 
 .logo:hover {
-    transform: scale(1.1)
+    transform: scale(1.1);
 }
 
-/* ============================== Animation for project cases ============================== */
-
-@keyframes fadeUp {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Default state before animation */
-.portfolio-project-case,
-.title-projects-animation,
-.projectsMAINtitle,
-.repo-projects {
+.portfolio-project-case, .title-projects-animation, .projectsMAINtitle, .repo-projects {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease, transform 0.6s ease;
+    animation-delay: 0.7s;
 }
 
-/* Triggered state */
-.portfolio-project-case.animate,
-.title-projects-animation.animate,
-.projectsMAINtitle.animate,
-.repo-projects.animate {
+.portfolio-project-case.animate, .title-projects-animation.animate,
+.projectsMAINtitle.animate, .repo-projects.animate {
     opacity: 1;
-    transform: translateY(0); /* Return to the original position */
-}
-
-.portfolio-project-case,
-.title-projects-animation,
-.projectsMAINtitle,
-.repo-projects {
-    --animation-delay: 0.7s;
-    animation-delay: var(--animation-delay, 1.5s);
+    transform: translateY(0);
 }
 
 /* ============================== Footer ========================================= */
