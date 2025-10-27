@@ -15,6 +15,7 @@ This is my **portfolio website** built to showcase my journey and skills as a be
 - **Home Page**: A welcoming landing page that introduces who I am, my role as a beginner Software Engineer, and links to my LinkedIn, GitHub, and downloadable resume.
 - **About Me**: A section that provides insight into my background, including how I transitioned into tech and my passion for development.
 - **Projects**: A dedicated area where I showcase my projects with brief descriptions and details about the tech stacks used.
+- **Skills & Technologies**: An animated section displaying my technical skills with professional logos, including JavaScript, Python, CSS, HTML, SQL, Git, AWS, Figma, and C#.
 - **Get in Contact**: A contact section that makes it easy for visitors to connect with me via email or social media for job opportunities, collaborations, or networking.
 - **Subtle Animations**: Animations are incorporated to enhance the overall user experience, ensuring smooth transitions throughout the site.
 
@@ -41,18 +42,9 @@ This is my **portfolio website** built to showcase my journey and skills as a be
 3. **Projects**: 
    - Here, visitors can explore a list of my projects, complete with brief descriptions and the technologies used in each project.
 
-4. **Get in Contact**: 
-   - Visitors can easily reach out to me via email or social media for job opportunities or collaborations. The contact form sends messages directly to my email.
+4. **Skills & Technologies**: 
+   - A visually appealing section showcasing my technical expertise with animated skill cards featuring professional logos and clean design.
 
----
+5. **Get in Contact**: 
+   - Visitors can easily reach out to me via email or social media for job opportunities or collaborations.
 
-## Future Improvements
-
-- **Project Filters**: 
-  - Add the ability to filter projects by technology or category (e.g., "Front-End", "Back-End", "Full-Stack").
-  
-- **Interactive Resume**: 
-  - Enhance the resume section with an interactive, downloadable version that allows users to view specific details based on categories like education, experience, and skills.
-
-- **Improved Animations**: 
-  - Add more dynamic animations and transitions to improve the user experience and make the site more engaging.
