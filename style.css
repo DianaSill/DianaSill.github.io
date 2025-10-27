@@ -276,6 +276,7 @@ body {
 .front-page-nav li:nth-child(1) { animation-delay: 0.3s !important; }
 .front-page-nav li:nth-child(2) { animation-delay: 0.6s !important; }
 .front-page-nav li:nth-child(3) { animation-delay: 0.9s !important; }
+.front-page-nav li:nth-child(4) { animation-delay: 1.2s !important; }
 
 /* ============================== Content Animations ============================== */
 .left-side, #about-me {
@@ -307,6 +308,7 @@ body {
 .left-side li:nth-child(1) { transition-delay: 0.5s; }
 .left-side li:nth-child(2) { transition-delay: 0.6s; }
 .left-side li:nth-child(3) { transition-delay: 0.7s; }
+.left-side li:nth-child(4) { transition-delay: 0.8s; }
 .left-side .icons { transition-delay: 0.9s; }
 
 #about-me.animate h2 { transition-delay: 0.1s; }
@@ -401,7 +403,7 @@ body {
     cursor: pointer;
     flex-direction: column;
     justify-content: space-around;
-    width: 40px;
+    width: 30px;
     height: 40px;
     padding: 8px;
 }
@@ -771,6 +773,82 @@ main {
 .projectsMAINtitle.animate, .repo-projects.animate {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* ============================== Skills Section ============================== */
+#skills {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    padding-bottom: 100px;
+}
+
+#skills.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 50px;
+    margin: 40px auto 0 auto;
+    max-width: 800px;
+    justify-content: center;
+}
+
+.skill-card {
+    background: rgba(201, 237, 220, 0.05);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(201, 237, 220, 0.2);
+    border-radius: 15px;
+    padding: 25px 20px;
+    text-align: center;
+    transition: all 0.6s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: float 3s ease-in-out infinite;
+}
+
+.skill-card.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+.skill-icon {
+    margin-bottom: 15px;
+}
+
+.skill-icon img {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.skill-card h3 {
+    color: #C9EDDC;
+    margin: 10px 0 0 0;
+    font-size: 1.2rem;
+}
+
+
+
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 25px;
+    }
+    
+    .skill-card {
+        padding: 20px 15px;
+    }
+    
+    .skill-icon img {
+        width: 40px;
+        height: 40px;
+    }
 }
 
 /* ============================== Footer ========================================= */

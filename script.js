@@ -21,6 +21,33 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: 0.2, rootMargin: '0px 0px -50px 0px' });
 
+    // Skills section special handling
+    const skillsSection = document.querySelector('#skills');
+    if (skillsSection) {
+        const skillsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                    const skillCards = entry.target.querySelectorAll('.skill-card');
+                    skillCards.forEach((card, index) => {
+                        const delay = parseFloat(card.dataset.delay) || 0;
+                        setTimeout(() => {
+                            card.classList.add('animate');
+                        }, delay * 1000);
+                    });
+                } else {
+                    entry.target.classList.remove('animate');
+                    const skillCards = entry.target.querySelectorAll('.skill-card');
+                    skillCards.forEach(card => {
+                        card.classList.remove('animate');
+                    });
+                }
+            });
+        }, { threshold: 0.2, rootMargin: '0px 0px -50px 0px' });
+        
+        skillsObserver.observe(skillsSection);
+    }
+
     // Observe all animated elements
     const animatedElements = document.querySelectorAll(`
         .front-page-identity, .front-page-identity h1, .front-page-identity h2, .front-page-identity .icons,
@@ -28,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .left-side, .left-side h1, .left-side h2, .left-side li, .left-side .icons,
         #about-me, #about-me h2, #about-me p,
         .portfolio-project-case, .title-projects-animation, .projectsMAINtitle, .repo-projects,
-
+        #skills h2,
         .main-vertical-line, .vertical-line
     `);
 
@@ -61,5 +88,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 dropdownMenu.style.display = 'none';
             });
         });
+    }
+
+    // Add skills link to mobile menu (after projects)
+    const skillsLink = document.createElement('li');
+    skillsLink.innerHTML = '<a href="#skills" class="dropmenu-item"> Skills</a>';
+    const projectsLink = dropdownMenu.querySelector('a[href="#projects"]').parentElement;
+    projectsLink.insertAdjacentElement('afterend', skillsLink);
+    
+    // Add click handler to close menu for the new Skills link
+    const skillsMenuItem = skillsLink.querySelector('.dropmenu-item');
+    skillsMenuItem.addEventListener('click', () => {
+        dropdownMenu.style.display = 'none';
+    });
+    
+    // Add skills link to desktop menu (after projects)
+    const desktopMenu = document.querySelector('.left-side .menu ul');
+    if (desktopMenu) {
+        const desktopSkillsLink = document.createElement('li');
+        desktopSkillsLink.innerHTML = '<a href="#skills" class="menu-option">Skills</a>';
+        const desktopProjectsLink = desktopMenu.querySelector('a[href="#projects"]').parentElement;
+        desktopProjectsLink.insertAdjacentElement('afterend', desktopSkillsLink);
     }
 });
