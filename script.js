@@ -53,5 +53,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 dropdownMenu.style.display = 'none';
             }
         });
+        
+        // Close menu when clicking on menu items
+        const menuItems = dropdownMenu.querySelectorAll('.dropmenu-item');
+        menuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                dropdownMenu.style.display = 'none';
+            });
+        });
     }
 });
