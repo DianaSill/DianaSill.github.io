@@ -441,9 +441,12 @@ ul {
     transition: all 0.6s;
 }
 
-.menu-option:hover,
-.contact-social a:hover {
+.menu-option:hover {
     transform: translateX(10px);
+    color: #C9EDDC;
+}
+
+.contact-social a:hover {
     color: #C9EDDC;
 }
 
@@ -737,115 +740,35 @@ main {
     font-family: nexa;
     text-align: center;
     letter-spacing: 0.5px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
-/* ============================== Form Layout ============================== */
-#contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.contact-options {
+    text-align: center;
 }
 
-/* Flexbox for Name and Email fields */
-.form-row {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-}
-
-.form-row .form-field {
-    flex: 1;
-}
-
-.form-row .form-field:not(:last-child) {
-    margin-right: 10px;
-}
-
-.form-field {
-    margin-bottom: 15px;
-}
-
-.form-field label {
-    display: block;
-    font-family: comfortaa;
-    font-size: 14px;
-    margin-bottom: 5px;
-}
-
-.form-field input,
-.form-field textarea {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    font-family: comfortaa;
-    border: 1px solid #82968C;
-    border-radius: 5px;
-    background-color: transparent;
-    color: #C9EDDC;
-    outline: none;
-    box-sizing: border-box;
-}
-
-.form-field input:focus,
-.form-field textarea:focus {
-    border-color: #C9EDDC;
-    background-color: transparent;
-}
-
-.submit-button {
-    padding: 12px 20px;
-    font-size: 14px;
+.contact-link {
+    display: inline-block;
     font-family: comfortaa;
     font-weight: bold;
     background-color: #89B6A5;
     color: #4C3B4D;
-    border: none;
+    padding: 12px 24px;
     border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
+    text-decoration: none;
+    margin-bottom: 20px;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.submit-button:hover {
+.contact-link:hover {
     background-color: #82968C;
     transform: translateY(-3px);
 }
 
-/* ============================== Responsive Design ============================== */
-@media (max-width: 768px) {
-    #get-in-contact {
-        width: 80%;
-        padding: 20px;
-    }
-
-    .form-row {
-        flex-direction: column;
-    }
-
-    .form-row .form-field:not(:last-child) {
-        margin-right: 0;
-    }
+.contact-social {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
 }
 
-/* ============================== Post-It Note Styles ============================== */
-.post-it-note {
-    background-color: #75714a;
-    padding: 15px;
-    font-size: 18px;
-    font-family: nexa;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-    color: #C9EDDC;
-    border: 2px dashed #000;
-    width: 95%;
-    margin-bottom: 30px;
-    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
-    position: relative;
-    top: 10px;
-}
-
-.post-it-note p {
-    margin: 0;
-    text-align: center;
-}
