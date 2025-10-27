@@ -591,6 +591,75 @@ main {
     display: flex;
     margin-bottom: 80px;
     gap: 40px;
+    position: relative;
+}
+
+.portfolio-project-case::before {
+    content: 'Click me!';
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    background: linear-gradient(135deg, rgba(201, 237, 220, 0.95), rgba(137, 182, 165, 0.9));
+    color: #4C3B4D;
+    padding: 8px 14px;
+    border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+    font-size: 12px;
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(76, 59, 77, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 10px rgba(201, 237, 220, 0.25);
+    animation: bounce 2.5s ease-in-out infinite, pulse 3s ease-in-out infinite;
+    z-index: 10;
+    border: 2px solid rgba(201, 237, 220, 1);
+}
+
+.portfolio-project-case::after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 33px;
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle, rgba(201, 237, 220, 0.95), rgba(137, 182, 165, 0.8));
+    border-radius: 50%;
+    z-index: 9;
+    border: 2px solid rgba(201, 237, 220, 1);
+    animation: bounce 2.5s ease-in-out infinite 0.1s;
+    box-shadow: 
+        12px 4px 0 -2px rgba(201, 237, 220, 0.95),
+        12px 4px 0 0px rgba(201, 237, 220, 1),
+        20px 8px 0 -4px rgba(201, 237, 220, 0.95),
+        20px 8px 0 -2px rgba(201, 237, 220, 1),
+        0 0 6px rgba(201, 237, 220, 0.2),
+        12px 4px 6px rgba(201, 237, 220, 0.15),
+        20px 8px 6px rgba(201, 237, 220, 0.15);
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0px) scale(1); }
+    50% { transform: translateY(-8px) scale(1.05); }
+}
+
+@keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 10px rgba(201, 237, 220, 0.25); }
+    50% { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 15px rgba(201, 237, 220, 0.35); }
+}
+
+.portfolio-project-case.reverse::before {
+    left: auto;
+    right: 20px;
+}
+
+.portfolio-project-case.reverse::after {
+    left: auto;
+    right: 33px;
+    box-shadow: 
+        -12px 4px 0 -2px rgba(201, 237, 220, 0.95),
+        -12px 4px 0 0px rgba(201, 237, 220, 1),
+        -20px 8px 0 -4px rgba(201, 237, 220, 0.95),
+        -20px 8px 0 -2px rgba(201, 237, 220, 1),
+        0 0 6px rgba(201, 237, 220, 0.2),
+        -12px 4px 6px rgba(201, 237, 220, 0.15),
+        -20px 8px 6px rgba(201, 237, 220, 0.15);
 }
 
 .repo-projects {
