@@ -44,7 +44,7 @@ class ParticleSystem {
     }
 
     createParticles() {
-        for (let i = 0; i < 80; i++) {
+        for (let i = 0; i < 100; i++) {
             const x = Math.random() * this.canvas.width;
             const y = Math.random() * this.canvas.height;
             this.particles.push({
