@@ -1,24 +1,39 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Single observer for all animated elements
+    // Enhanced observer with multiple thresholds
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            entry.target.classList.toggle('animate', entry.isIntersecting);
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                // Add stagger delay for child elements
+                const children = entry.target.querySelectorAll('h3, p, img, .project-stack');
+                children.forEach((child, index) => {
+                    child.style.animationDelay = `${index * 0.1}s`;
+                    child.classList.add('fade-in-up');
+                });
+            } else {
+                entry.target.classList.remove('animate');
+                // Remove fade-in-up from children
+                const children = entry.target.querySelectorAll('h3, p, img, .project-stack');
+                children.forEach(child => {
+                    child.classList.remove('fade-in-up');
+                });
+            }
         });
-    }, { threshold: 0.4 });
+    }, { threshold: 0.2, rootMargin: '0px 0px -50px 0px' });
 
-    // Observe all animated elements at once
+    // Observe all animated elements
     const animatedElements = document.querySelectorAll(`
         .front-page-identity, .front-page-identity h1, .front-page-identity h2, .front-page-identity .icons,
         .front-page-nav, .front-page-nav li,
         .left-side, .left-side h1, .left-side h2, .left-side li, .left-side .icons,
         #about-me, #about-me h2, #about-me p,
         .portfolio-project-case, .title-projects-animation, .projectsMAINtitle, .repo-projects,
-        #contact-para, .contact-title, .contact-link,
+
         .main-vertical-line, .vertical-line
     `);
 
     animatedElements.forEach(element => {
-        if (element.getBoundingClientRect().top < window.innerHeight * 0.4) {
+        if (element.getBoundingClientRect().top < window.innerHeight * 0.2) {
             element.classList.add('animate');
         }
         observer.observe(element);
