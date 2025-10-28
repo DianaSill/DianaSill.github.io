@@ -140,13 +140,44 @@
             <div id="projects" class="content">
                 <h2 class="projectsMAINtitle"> Projects</h2>
 
-                <h3 class="title-projects-animation">🏛️ Direct Debit Processing System</h3>
+                <h3 class="title-projects-animation">🗺️ Geographic Street Lookup</h3>
                 <div class="portfolio-project-case">
+                    <a href="https://github.com/DianaSill/Streets-Lookup-AOT">
+                        <img class="project-image" src="assets/street-lookup-terminal.svg"
+                            alt="Terminal showing .NET 8 AOT Lambda deployment and API testing with performance metrics" width="300" height="200">
+                    </a>
+                    <div class="para-and-stack">
+                        <p id="portfolio-case-text">
+                            Modernized a legacy street lookup service by migrating from <span class="bold-text">.NET 6 text-based search</span> to 
+                            <span class="bold-text">.NET 8 AOT coordinate-based spatial lookup</span>. Achieved <span class="bold-text">3x faster cold starts</span> 
+                            (~170ms vs 500ms) and implemented <span class="bold-text">progressive radius expansion</span> with PostGIS spatial indexing 
+                            for sub-50ms query performance.
+                        </p>
+
+                        <div class="project-stack">
+                            <img class="logo" src="https://www.vectorlogo.zone/logos/dotnet/dotnet-icon.svg"
+                                alt=".NET Logo" title=".NET 8 AOT" width="30" height="30">
+                            <img class="logo" src="assets/aws-icons/lambda.svg"
+                                alt="AWS Lambda" title="AWS Lambda" width="30" height="30">
+                            <img class="logo" src="assets/aws-icons/api-gateway.svg"
+                                alt="API Gateway" title="Amazon API Gateway" width="30" height="30">
+                            <img class="logo" src="https://www.vectorlogo.zone/logos/postgresql/postgresql-icon.svg"
+                                alt="PostgreSQL Logo" title="PostgreSQL/PostGIS" width="30" height="30">
+                            <img class="logo" src="https://www.vectorlogo.zone/logos/docker/docker-icon.svg"
+                                alt="Docker Logo" title="Docker" width="30" height="30">
+                            <img class="logo" src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg"
+                                alt="Git Logo" title="Git" width="30" height="30">
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="reverse-title title-projects-animation">🏛️ Direct Debit Processing System</h3>
+                <div class="portfolio-project-case reverse">
                     <a href="https://github.com/DianaSill/Direct-Debit-Processing-System">
                         <img class="project-image" src="assets/paperlessDD.png"
                             alt="Direct debit processing system architecture diagram" width="300" height="200">
                     </a>
-                    <div class="para-and-stack">
+                    <div class="para-and-stack reverse">
                         <p id="portfolio-case-text">
                             A <span class="bold-text">serverless</span> direct debit form processing system built for local government councils. 
                             Features <span class="bold-text">real-time customer validation</span> (300-600ms response), 
@@ -154,7 +185,7 @@
                             <span class="bold-text">VPC-secured architecture</span> with comprehensive monitoring and 24/7 self-service capability.
                         </p>
 
-                        <div class="project-stack">
+                        <div class="project-stack reverse">
                             <img class="logo" src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-icon.svg"
                                 alt="HTML Logo" title="HTML" width="30" height="30">
                             <img class="logo" src="https://www.vectorlogo.zone/logos/javascript/javascript-icon.svg"
@@ -171,24 +202,26 @@
                                 alt="Amazon S3" title="Amazon S3" width="30" height="30">
                             <img class="logo" src="assets/aws-icons/cloudwatch.svg"
                                 alt="CloudWatch" title="Amazon CloudWatch" width="30" height="30">
+                            <img class="logo" src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg"
+                                alt="Git Logo" title="Git" width="30" height="30">
                         </div>
                     </div>
                 </div>
 
-                <h3 class="reverse-title title-projects-animation">🩺 Pneumonia detection</h3>
-                <div class="portfolio-project-case reverse">
+                <h3 class="title-projects-animation">🩺 Pneumonia detection</h3>
+                <div class="portfolio-project-case">
                     <a href="https://github.com/DianaSill/pneumonia-detection">
                         <img class="project-image" src="assets/pneumonia-deep-learning.gif"
                             alt="Xray images on loop" width="300" height="200">
                     </a>
-                    <div class="para-and-stack reverse">
+                    <div class="para-and-stack">
                         <p id="portfolio-case-text">
                             A deep learning model for pneumonia detection in chest X-rays, built using <span class="bold-text">ResNet50</span> for transfer learning. 
                             The model achieves <span class="bold-text">93% accuracy</span> on unseen data, using techniques like <span class="bold-text">data augmentation</span>, <span class="bold-text">fine-tuning</span>, 
                             and <span class="bold-text">class weight adjustments</span> to optimize performance. 
                         </p> 
 
-                        <div class="project-stack reverse">
+                        <div class="project-stack">
                             <img class="logo" src="https://www.vectorlogo.zone/logos/jupyter/jupyter-icon.svg"
                                 alt="Jupyter Notebook Logo" title="Jupyter Notebook" width="30" height="30">
                             <img class="logo" src="https://www.vectorlogo.zone/logos/python/python-icon.svg"
@@ -197,13 +230,13 @@
                     </div>
                 </div>
 
-                <h3 class="title-projects-animation">Portfolio Website 📑</h3>
-                <div class="portfolio-project-case">
+                <h3 class="reverse-title title-projects-animation">Portfolio Website 📑</h3>
+                <div class="portfolio-project-case reverse">
                     <a href="https://github.com/DianaSill/DianaSill.github.io">
                         <img class="project-image" src="assets/figma-portfolio.jpg"
                             alt="A picture figma with drafts of the portfolio's design" width="300" height="200">
                     </a>
-                    <div class="para-and-stack">
+                    <div class="para-and-stack reverse">
                         <p id="portfolio-case-text">
                             A modern and <span class="bold-text">clean</span> design that keeps things simple and easy
                             to use. Subtle animations, a
@@ -212,7 +245,7 @@
                             personal, reflecting who I am and what I can do.
                         </p>
 
-                        <div class="project-stack">
+                        <div class="project-stack reverse">
                             <img class="logo" src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-icon.svg"
                                 alt="HTML Logo" title="HTML" width="30" height="30">
                             <img class="logo" src="https://www.vectorlogo.zone/logos/w3_css/w3_css-icon.svg"
@@ -225,8 +258,8 @@
                     </div>
                 </div>
 
-                <h3 class="reverse-title title-projects-animation">🧩 Silent Hill Console Game</h3>
-                <div class="portfolio-project-case reverse">
+                <h3 class="title-projects-animation">🧩 Silent Hill Console Game</h3>
+                <div class="portfolio-project-case">
                     <a href="https://github.com/DianaSill/silent-hill-console-game">
                         <img class="project-image" src="assets/silentHillConsoleGame.gif"
                             alt="A gif of a text adventure game" width="300" height="200">
@@ -249,13 +282,13 @@
                     </div>
                 </div>
 
-                <h3 class="title-projects-animation">Word Unscramble Game 🎲</h3>
-                <div class="portfolio-project-case">
+                <h3 class="reverse-title title-projects-animation">Word Unscramble Game 🎲</h3>
+                <div class="portfolio-project-case reverse">
                     <a href="https://dianasill.github.io/unscramble-game/">
                         <img class="project-image" src="assets/unscramblegame.gif"
                             alt="A gif of a game being played on the app" width="300" height="200">
                     </a>
-                    <div class="para-and-stack">
+                    <div class="para-and-stack reverse">
                         <p id="portfolio-case-text">
                             A word game where you unscramble letters to find the right word. It includes <span
                                 class="bold-text">hints</span>,
@@ -264,7 +297,7 @@
                             fetch random words, making every round different and unpredictable.
                         </p>
 
-                        <div class="project-stack">
+                        <div class="project-stack reverse">
                             <img class="logo" src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-icon.svg"
                                 alt="HTML Logo" title="HTML" width="30" height="30">
                             <img class="logo" src="https://www.vectorlogo.zone/logos/w3_css/w3_css-icon.svg"
@@ -275,13 +308,13 @@
                     </div>
                 </div>
 
-                <h3 class="reverse-title title-projects-animation">☑️ To do list App</h3>
-                <div class="portfolio-project-case reverse">
+                <h3 class="title-projects-animation">☑️ To do list App</h3>
+                <div class="portfolio-project-case">
                     <a href="https://dianasill.github.io/task-list-app/">
                         <img class="project-image" src="assets/todolist.gif" alt="A gif of a to do application"
                             width="300" height="200">
                     </a>
-                    <div class="para-and-stack reverse">
+                    <div class="para-and-stack">
                         <p id="portfolio-case-text">
                             A simple, easy-to-use task manager that lets you <span class="bold-text">add</span>, <span
                                 class="bold-text">complete</span>, and <span class="bold-text">delete</span> tasks
@@ -292,7 +325,7 @@
                             device.
                         </p>
 
-                        <div class="project-stack reverse">
+                        <div class="project-stack">
                             <img class="logo" src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-icon.svg"
                                 alt="HTML Logo" title="HTML" width="30" height="30">
                             <img class="logo" src="https://www.vectorlogo.zone/logos/w3_css/w3_css-icon.svg"
@@ -348,6 +381,12 @@
                     </div>
                     <div class="skill-card" data-delay="0.5">
                         <div class="skill-icon">
+                            <img src="https://www.vectorlogo.zone/logos/dotnet/dotnet-icon.svg" alt=".NET" width="50" height="50">
+                        </div>
+                        <h3>.NET 8 AOT</h3>
+                    </div>
+                    <div class="skill-card" data-delay="0.55">
+                        <div class="skill-icon">
                             <img src="assets/aws-icons/lambda.svg" alt="AWS Lambda" width="50" height="50">
                         </div>
                         <h3>AWS Lambda</h3>
@@ -367,6 +406,12 @@
                             <img src="https://www.vectorlogo.zone/logos/mysql/mysql-icon.svg" alt="SQL" width="50" height="50">
                         </div>
                         <h3>SQL</h3>
+                    </div>
+                    <div class="skill-card" data-delay="0.72">
+                        <div class="skill-icon">
+                            <img src="https://www.vectorlogo.zone/logos/postgresql/postgresql-icon.svg" alt="PostgreSQL" width="50" height="50">
+                        </div>
+                        <h3>PostgreSQL</h3>
                     </div>
                     <div class="skill-card" data-delay="0.75">
                         <div class="skill-icon">
@@ -420,6 +465,12 @@
                         </div>
                         <h3>EventBridge</h3>
                     </div>
+                    <div class="skill-card" data-delay="0.96">
+                        <div class="skill-icon">
+                            <img src="assets/aws-icons/route53.svg" alt="Amazon Route 53" width="50" height="50">
+                        </div>
+                        <h3>Route 53</h3>
+                    </div>
                     </div>
                     
                     <h3 class="skills-group-title">Tools & Design</h3>
@@ -430,12 +481,19 @@
                         </div>
                         <h3>Git</h3>
                     </div>
+                    <div class="skill-card" data-delay="0.98">
+                        <div class="skill-icon">
+                            <img src="https://www.vectorlogo.zone/logos/docker/docker-icon.svg" alt="Docker" width="50" height="50">
+                        </div>
+                        <h3>Docker</h3>
+                    </div>
                     <div class="skill-card" data-delay="0.99">
                         <div class="skill-icon">
                             <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="Figma" width="50" height="50">
                         </div>
                         <h3>Figma</h3>
                     </div>
+
                     </div>
                 </div>
             </div>

@@ -572,8 +572,8 @@ main {
 
 @media (max-width: 1024px) {
     main {
-        padding-left: clamp(20px, 8vw, 100px);
-        padding-right: clamp(20px, 8vw, 100px);
+        padding-left: clamp(40px, 8vw, 100px);
+        padding-right: clamp(40px, 8vw, 100px);
         max-width: 100%;
         box-sizing: border-box;
     }
@@ -781,7 +781,8 @@ main {
 
 .project-stack {
     display: flex;
-    gap: 15px;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 .logo:hover {
