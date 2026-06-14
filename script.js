@@ -133,11 +133,14 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 
 
-// Highlight active section in mobile dropdown
+// Highlight active section in mobile dropdown + nav label
 (function() {
     const sections = document.querySelectorAll('section[id], div[id].content, div#impact');
     const dropItems = document.querySelectorAll('.dropmenu-item');
+    const navLabel = document.getElementById('navSectionLabel');
     if (!sections.length || !dropItems.length) return;
+
+    const sectionNames = { 'home': 'Home', 'about-me': 'About', 'impact': 'What I Build', 'projects': 'Projects', 'skills': 'Skills' };
 
     window.addEventListener('scroll', () => {
         let current = '';
@@ -150,5 +153,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const href = item.getAttribute('href');
             item.classList.toggle('active', href === '#' + current);
         });
+
+        if (navLabel) navLabel.textContent = sectionNames[current] || '';
     });
 })();
+
+
