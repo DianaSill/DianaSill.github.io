@@ -111,3 +111,18 @@ document.addEventListener('DOMContentLoaded', () => {
         desktopProjectsLink.insertAdjacentElement('afterend', desktopSkillsLink);
     }
 });
+
+// Impact carousel dots
+(function() {
+    const list = document.querySelector('.impact-list');
+    const dots = document.querySelectorAll('.impact-carousel-dots .dot');
+    if (!list || !dots.length) return;
+
+    list.addEventListener('scroll', () => {
+        const scrollLeft = list.scrollLeft;
+        const itemWidth = list.querySelector('li').offsetWidth;
+        const gap = 0;
+        const index = Math.round(scrollLeft / (itemWidth + gap));
+        dots.forEach((d, i) => d.classList.toggle('active', i === index));
+    });
+})();

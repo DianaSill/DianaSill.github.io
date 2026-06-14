@@ -141,12 +141,19 @@
                 <h2>What I Build</h2>
                 <p>I build and maintain <span class="bold-text">production serverless systems</span> across multiple AWS accounts for West Northamptonshire Council. My work directly impacts residents and staff every day:</p>
                 <ul class="impact-list">
-                    <li><span class="bold-text">Financial processing</span> &#8212; A direct debit system handling live bank verification and automated daily exports for two councils, running unattended 24/7</li>
-                    <li><span class="bold-text">Data at scale</span> &#8212; 5 million+ CRM case files processed into MySQL with 100 parallel Lambda workers at 55,000 files/min, feeding Power BI dashboards</li>
-                    <li><span class="bold-text">Real-time monitoring</span> &#8212; A serverless dashboard tracking 400+ council systems from multiple sources, with Cognito auth and automated alerting</li>
-                    <li><span class="bold-text">AI-driven services</span> &#8212; A live system where Bedrock AI generates personalised action plans for families, with encrypted email tracking and CXM case creation</li>
-                    <li><span class="bold-text">Identity infrastructure</span> &#8212; A centralised Cognito staff authentication system (one user pool, multiple apps, zero cross-account IAM complexity) designed for future Microsoft SSO migration</li>
+                    <li><span class="bold-text">Financial processing</span><br>A direct debit system handling live bank verification and automated daily exports for two councils, running unattended 24/7</li>
+                    <li><span class="bold-text">Data at scale</span><br>5 million+ CRM case files processed into MySQL with 100 parallel Lambda workers at 55,000 files/min, feeding Power BI dashboards</li>
+                    <li><span class="bold-text">Real-time monitoring</span><br>A serverless dashboard tracking 400+ council systems from multiple sources, with Cognito auth and automated alerting</li>
+                    <li><span class="bold-text">AI-driven services</span><br>A live system where Bedrock AI generates personalised action plans for families, with encrypted email tracking and CXM case creation</li>
+                    <li><span class="bold-text">Identity infrastructure</span><br>A centralised Cognito staff authentication system (one user pool, multiple apps, zero cross-account IAM complexity) designed for future Microsoft SSO migration</li>
                 </ul>
+                <div class="impact-carousel-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
             </div>
 
             <div id="projects" class="content">
@@ -159,7 +166,7 @@
                             alt="Direct debit processing system architecture diagram" width="300" height="200">
                     </a>
                     <div class="para-and-stack">
-                        <p id="portfolio-case-text">
+                        <p class="portfolio-case-text">
                             A <span class="bold-text">serverless</span> direct debit form processing system serving <span class="bold-text">two councils</span>. 
                             Features <span class="bold-text">real-time customer validation</span> (300-600ms against 350k records), 
                             third-party bank verification with AES-256 encryption, <span class="bold-text">automated daily exports</span> to ERP, 
@@ -194,7 +201,7 @@
                             alt="Step Functions parallel processing architecture" width="300" height="200">
                     </a>
                     <div class="para-and-stack reverse">
-                        <p id="portfolio-case-text">
+                        <p class="portfolio-case-text">
                             Processes <span class="bold-text">5 million+ JSON files</span> from S3 into MySQL using 
                             <span class="bold-text">Step Functions with 100 parallel Lambda workers</span> — throughput of 55,000 files/min. 
                             Includes a custom <span class="bold-text">dynamic programming algorithm</span> to fix concatenated checkbox data 
@@ -225,7 +232,7 @@
                             alt="AI Packages system architecture" width="300" height="200">
                     </a>
                     <div class="para-and-stack">
-                        <p id="portfolio-case-text">
+                        <p class="portfolio-case-text">
                             Families describe their situation and receive a <span class="bold-text">personalised AI-generated action plan</span> 
                             within seconds. Integrates <span class="bold-text">Amazon Bedrock</span> (Claude), automatic CXM case creation, 
                             <span class="bold-text">AES-256-GCM encrypted</span> email tracking links, and cross-account SES delivery. 
@@ -256,7 +263,7 @@
                             alt="System status monitoring dashboard" width="300" height="200">
                     </a>
                     <div class="para-and-stack reverse">
-                        <p id="portfolio-case-text">
+                        <p class="portfolio-case-text">
                             Real-time monitoring of <span class="bold-text">400+ council systems</span> using a loosely coupled serverless architecture. 
                             Multiple data sources (Wormly API, LeanIX, custom health checks), <span class="bold-text">Cognito-authenticated</span> 
                             helpdesk portal, full audit trail, and automated alerting. Cost: <span class="bold-text">~£30/month</span> (85% cheaper than ECS alternative).
@@ -286,7 +293,7 @@
                             alt="Terminal showing .NET 8 AOT Lambda deployment and API testing with performance metrics" width="300" height="200">
                     </a>
                     <div class="para-and-stack">
-                        <p id="portfolio-case-text">
+                        <p class="portfolio-case-text">
                             Modernized a legacy street lookup service by migrating from <span class="bold-text">.NET 6 text-based search</span> to 
                             <span class="bold-text">.NET 8 AOT coordinate-based spatial lookup</span>. Achieved <span class="bold-text">3x faster cold starts</span> 
                             (~170ms vs 500ms) and implemented <span class="bold-text">progressive radius expansion</span> with PostGIS spatial indexing 
@@ -317,7 +324,7 @@
                             alt="BadgeAble platform detachment architecture" width="300" height="200">
                     </a>
                     <div class="para-and-stack reverse">
-                        <p id="portfolio-case-text">
+                        <p class="portfolio-case-text">
                             Detached a <span class="bold-text">150-module Blue Badge application</span> from OutSystems and migrated it to 
                             self-managed <span class="bold-text">.NET 4.8 / IIS / SQL Server</span> on AWS. Eliminated platform licensing dependencies 
                             entirely. Includes Terraform infrastructure, automated build scripts, and a full operations runbook 
@@ -344,7 +351,7 @@
                             alt="Cross-account API Gateway architecture" width="300" height="200">
                     </a>
                     <div class="para-and-stack">
-                        <p id="portfolio-case-text">
+                        <p class="portfolio-case-text">
                             A <span class="bold-text">cross-account API Gateway</span> architecture centralising all council APIs under 
                             <span class="bold-text">api.westnorthants.gov.uk</span>. Account A hosts the gateway with a custom domain; 
                             Account B hosts Lambda functions. Uses <span class="bold-text">IAM role assumption</span> and Lambda resource policies 
@@ -373,7 +380,7 @@
                             alt="Xray images on loop" width="300" height="200">
                     </a>
                     <div class="para-and-stack reverse">
-                        <p id="portfolio-case-text">
+                        <p class="portfolio-case-text">
                             A deep learning model for pneumonia detection in chest X-rays, built using <span class="bold-text">ResNet50</span> for transfer learning. 
                             The model achieves <span class="bold-text">93% accuracy</span> on unseen data, using techniques like <span class="bold-text">data augmentation</span>, <span class="bold-text">fine-tuning</span>, 
                             and <span class="bold-text">class weight adjustments</span> to optimize performance. 

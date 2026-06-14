@@ -258,7 +258,7 @@ main { padding-right: clamp(20px, 8vw, 130px); max-width: 1920px; }
         0 0 6px rgba(201, 237, 220, 0.2), -12px 4px 6px rgba(201, 237, 220, 0.15), -20px 8px 6px rgba(201, 237, 220, 0.15);
 }
 
-#portfolio-case-text { width: 100%; max-width: 450px; margin-top: 0; }
+.portfolio-case-text { width: 100%; max-width: 450px; margin-top: 0; }
 .para-and-stack { display: flex; flex-direction: column; }
 .para-and-stack.reverse { flex-direction: column; }
 
@@ -303,6 +303,28 @@ main { padding-right: clamp(20px, 8vw, 130px); max-width: 1920px; }
 .impact-list li { padding: 10px 0 10px 25px; position: relative; line-height: 1.6; }
 .impact-list li::before { content: "\25B8"; position: absolute; left: 0; color: #8b5cf6; font-weight: bold; }
 
+@media (max-width: 1024px) {
+    .impact-list {
+        display: flex; overflow-x: auto; scroll-snap-type: x mandatory;
+        gap: 16px; margin: 20px -20px; padding: 10px 20px;
+        -webkit-overflow-scrolling: touch; scrollbar-width: none;
+    }
+    .impact-list::-webkit-scrollbar { display: none; }
+    .impact-list li {
+        flex: 0 0 80vw; scroll-snap-align: center;
+        background: rgba(201, 237, 220, 0.05); border: 1px solid rgba(201, 237, 220, 0.15);
+        border-radius: 12px; padding: 20px 20px 20px 35px; margin: 0;
+        transition: transform 0.4s ease, opacity 0.4s ease;
+    }
+    .impact-carousel-dots { display: flex; justify-content: center; gap: 8px; margin-top: 12px; }
+    .impact-carousel-dots .dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(201, 237, 220, 0.3); transition: all 0.4s ease; }
+    .impact-carousel-dots .dot.active { background: #8b5cf6; transform: scale(1.3); }
+}
+
+@media (min-width: 1025px) {
+    .impact-carousel-dots { display: none; }
+}
+
 /* ============================== Scroll to Top ============================== */
 .going-top-page { fill: #89B6A5; width: 45px; position: fixed; right: 40px; bottom: 25px; transition: all 0.2s ease-in-out 0.05s; }
 .going-top-page:hover { fill: #C9EDDC; transform: translateY(-5px); }
@@ -318,7 +340,8 @@ main { padding-right: clamp(20px, 8vw, 130px); max-width: 1920px; }
 /* ============================== Responsive: 1024px ============================== */
 @media (max-width: 1024px) {
     .main-vertical-line { height: calc(100vh - 120px); }
-    .front-page-identity { padding-bottom: 15vh; padding-right: 5vw; }
+    .front-page { align-items: flex-start; padding-top: 20vh; }
+    .front-page-identity { padding-bottom: 0; padding-right: 5vw; }
     .front-page-identity h1 { font-size: 2rem; width: 90%; margin-bottom: 0.6rem; }
     .front-page-identity h2 { font-size: 1rem; margin-top: 0.6rem; line-height: 1.8rem; }
     .front-page-nav { padding-top: 150px; padding-left: 40px; }
@@ -328,6 +351,12 @@ main { padding-right: clamp(20px, 8vw, 130px); max-width: 1920px; }
     .menu-toggle-button { display: block; }
 
     main { padding-left: clamp(40px, 8vw, 100px); padding-right: clamp(40px, 8vw, 100px); max-width: 100%; }
+
+    #about-me, #about-me h2, #about-me p {
+        opacity: 1; transform: none; transition: none;
+    }
+
+    html, body { overflow-x: hidden; }
 }
 
 /* ============================== Responsive: 768px ============================== */
@@ -336,7 +365,7 @@ main { padding-right: clamp(20px, 8vw, 130px); max-width: 1920px; }
     .front-page-identity { padding-bottom: 10vh; padding-right: 4vw; }
     .front-page-identity h1 { font-size: 1.6rem; width: 100%; margin-bottom: 0.5rem; }
     .front-page-identity h2 { font-size: 0.9rem; margin-top: 0.5rem; line-height: 1.5rem; text-align: end; }
-    .front-page-nav { padding-top: 100px; padding-left: 20px; }
+    .front-page-nav { padding-top: 50px; padding-left: 20px; }
 
     .menu-toggle-button { display: flex !important; justify-content: space-between !important; }
     .menu-toggle-button .line { background-color: #C9EDDC !important; height: 4px !important; width: 100% !important; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important; margin: 2px 0 !important; }
@@ -361,7 +390,7 @@ main { padding-right: clamp(20px, 8vw, 130px); max-width: 1920px; }
 @media (min-width: 480px) {
     .reverse { flex-direction: row-reverse; }
     .reverse-title { text-align: right; }
-    .reverse #portfolio-case-text { text-align: right; }
+    .reverse .portfolio-case-text { text-align: right; }
     .reverse .project-stack { display: flex; gap: 15px; justify-content: flex-end; }
     .reverse .para-and-stack { align-items: flex-end; }
 }
