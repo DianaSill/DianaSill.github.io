@@ -1,0 +1,33 @@
+<svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="200" fill="#0d1117" rx="8"/>
+  <rect x="0" y="0" width="300" height="30" fill="#21262d" rx="8 8 0 0"/>
+  <circle cx="15" cy="15" r="4" fill="#ff5f56"/>
+  <circle cx="30" cy="15" r="4" fill="#ffbd2e"/>
+  <circle cx="45" cy="15" r="4" fill="#27ca3f"/>
+  <text x="150" y="20" font-family="monospace" font-size="12" fill="#8b949e" text-anchor="middle">CRM Reporting - Step Functions</text>
+
+  <g font-family="monospace" font-size="11" fill="#e6edf3">
+    <text x="15" y="50" fill="#7c3aed">$</text>
+    <text x="25" y="50">aws stepfunctions start-execution</text>
+
+    <text x="15" y="70" fill="#22c55e">▶</text>
+    <text x="25" y="70">Batch 1: Listing 50,000 files...</text>
+
+    <text x="15" y="90" fill="#f59e0b">⟳</text>
+    <text x="25" y="90">Spawning 100 parallel workers</text>
+
+    <text x="15" y="110" fill="#22c55e">✓</text>
+    <text x="25" y="110" fill="#8b949e">Worker 1-100 complete (19-22s)</text>
+
+    <text x="15" y="130" fill="#f59e0b">⟳</text>
+    <text x="25" y="130">Batch 2: Next 50,000 files...</text>
+
+    <text x="15" y="150" fill="#8b949e">...</text>
+
+    <text x="15" y="170" fill="#22c55e">✓</text>
+    <text x="25" y="170">Done: 5,000,000 files processed</text>
+
+    <rect x="190" y="160" width="95" height="18" fill="#3b82f6" rx="9" opacity="0.2"/>
+    <text x="237" y="172" font-size="10" fill="#3b82f6" text-anchor="middle">55,000 files/min</text>
+  </g>
+</svg>

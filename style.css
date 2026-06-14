@@ -904,3 +904,24 @@ main {
 
 
 
+
+/* Impact section */
+.impact-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.impact-list li {
+    padding: 10px 0 10px 25px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.impact-list li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #8b5cf6;
+    font-weight: bold;
+}
