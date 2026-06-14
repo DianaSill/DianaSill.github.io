@@ -326,7 +326,6 @@ main { padding-right: clamp(20px, 8vw, 130px); max-width: 1920px; }
     .mobile-nav-bar { display: flex; }
     .left-side { display: none; }
     .menu-toggle-button { display: block; }
-    .content { display: none; }
 
     main { padding-left: clamp(40px, 8vw, 100px); padding-right: clamp(40px, 8vw, 100px); max-width: 100%; }
 }
