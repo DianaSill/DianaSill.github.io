@@ -260,6 +260,7 @@ main { padding-right: clamp(20px, 8vw, 130px); max-width: 1920px; }
 
 #portfolio-case-text { width: 100%; max-width: 450px; margin-top: 0; }
 .para-and-stack { display: flex; flex-direction: column; }
+.para-and-stack.reverse { flex-direction: column; }
 
 .project-image { width: 100%; height: auto; max-width: 300px; object-fit: cover; border-radius: 20px; transition: transform 0.3s ease, box-shadow 0.3s ease; }
 .project-image:hover { transform: translateY(-10px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); }
