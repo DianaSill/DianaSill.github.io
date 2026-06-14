@@ -89,18 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
-
-    // Add skills link to mobile menu (after projects)
-    const skillsLink = document.createElement('li');
-    skillsLink.innerHTML = '<a href="#skills" class="dropmenu-item"> Skills</a>';
-    const projectsLink = dropdownMenu.querySelector('a[href="#projects"]').parentElement;
-    projectsLink.insertAdjacentElement('afterend', skillsLink);
-    
-    // Add click handler to close menu for the new Skills link
-    const skillsMenuItem = skillsLink.querySelector('.dropmenu-item');
-    skillsMenuItem.addEventListener('click', () => {
-        dropdownMenu.style.display = 'none';
-    });
     
     // Add skills link to desktop menu (after projects)
     const desktopMenu = document.querySelector('.left-side .menu ul');
@@ -112,17 +100,55 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Impact carousel dots
+// Impact carousel - infinite loop by reordering DOM nodes
 (function() {
     const list = document.querySelector('.impact-list');
     const dots = document.querySelectorAll('.impact-carousel-dots .dot');
-    if (!list || !dots.length) return;
+    if (!list || !dots.length || window.innerWidth > 1024) return;
+
+    const itemCount = dots.length;
 
     list.addEventListener('scroll', () => {
-        const scrollLeft = list.scrollLeft;
-        const itemWidth = list.querySelector('li').offsetWidth;
-        const gap = 0;
-        const index = Math.round(scrollLeft / (itemWidth + gap));
-        dots.forEach((d, i) => d.classList.toggle('active', i === index));
+        const items = list.querySelectorAll('li');
+        const itemWidth = items[0].offsetWidth + 16;
+        const maxScroll = list.scrollWidth - list.clientWidth;
+
+        if (list.scrollLeft >= maxScroll - 2) {
+            const first = list.firstElementChild;
+            list.appendChild(first);
+            list.scrollLeft -= itemWidth;
+        } else if (list.scrollLeft <= 2) {
+            const last = list.lastElementChild;
+            list.insertBefore(last, list.firstElementChild);
+            list.scrollLeft += itemWidth;
+        }
+
+        // Update dots
+        const visibleIdx = Math.round(list.scrollLeft / itemWidth);
+        if (items[visibleIdx]) {
+            const idx = parseInt(items[visibleIdx].dataset.index);
+            dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+        }
+    });
+})();
+
+
+// Highlight active section in mobile dropdown
+(function() {
+    const sections = document.querySelectorAll('section[id], div[id].content, div#impact');
+    const dropItems = document.querySelectorAll('.dropmenu-item');
+    if (!sections.length || !dropItems.length) return;
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const top = section.offsetTop - 100;
+            if (window.scrollY >= top) current = section.id;
+        });
+
+        dropItems.forEach(item => {
+            const href = item.getAttribute('href');
+            item.classList.toggle('active', href === '#' + current);
+        });
     });
 })();
