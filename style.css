@@ -362,5 +362,6 @@ main { padding-right: clamp(20px, 8vw, 130px); max-width: 1920px; }
     .reverse { flex-direction: row-reverse; }
     .reverse-title { text-align: right; }
     .reverse #portfolio-case-text { text-align: right; }
-    .reverse .project-stack { display: flex; gap: 15px; justify-content: flex-start; }
+    .reverse .project-stack { display: flex; gap: 15px; justify-content: flex-end; }
+    .reverse .para-and-stack { align-items: flex-end; }
 }
