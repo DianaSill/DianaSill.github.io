@@ -171,7 +171,7 @@ ul { list-style-type: none; padding-left: 0; line-height: 55px; }
     width: 36px; height: 44px; padding: 10px 4px; border-radius: 4px;
 }
 
-.menu-toggle-button .dot {
+.menu-toggle-button .line {
     display: block; height: 3px; width: 100%; background-color: #C9EDDC;
     border-radius: 2px; transition: all 0.3s ease;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
